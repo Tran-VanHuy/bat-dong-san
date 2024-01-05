@@ -1,0 +1,545 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title%}Trang chủ {% endblock %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
+<!-- Banner -->
+<div class="position-relative">
+    <swiper-container class="mySwiper" navigation="true">
+        <swiper-slide>
+            <img src="{% static 'images/rectangle1.png' %}">
+        </swiper-slide>
+        <swiper-slide>
+            <img src="{% static 'images/rectangle1.png' %}">
+        </swiper-slide>
+        <swiper-slide>
+            <img src="{% static 'images/rectangle1.png' %}">
+        </swiper-slide>
+    </swiper-container>
+    <div class="position-absolute bottom-0 w-100 z-1 d-flex justify-content-center">
+        <div class="container-content-banner">
+            <div class="d-flex mb-2">
+                <div class="bg-white d-flex align-items-center gap-4 container-checkbox-banner banner-top">
+                    <label class="text-main font-bold">
+                        <input type="radio" name="">
+                        Dự án
+                    </label>
+                    <label class="text-main font-bold">
+                        <input type="radio" name="">
+                        Nhà đất bán lẻ
+                    </label>
+                </div>
+                <div></div>
+            </div>
+            <div class="d-flex align-items-center w-100 banner-bottom bg-white mb-4 gap-3">
+                <span class="me-3">Loại hình: </span>
+                <select class="border-0 text-main">
+                    <option>Tất cả</option>
+                </select>
+                <div class="flex-fill container-input-search position-relative">
+                    <input type="text" class="h-100 w-100 rounded-pill border-0" name="" placeholder="Tìm theo tên">
+                    <div class="position-absolute start-0 top-0 bottom-0 d-flex align-items-center ps-3">
+                        <i class="bi bi-search"></i>
+                    </div>
+                </div>
+                <div class="">
+                    <button class="text-white rounded-pill button-search border-0">Tìm kiếm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  -->
+<div class="container-content">
+    <!--  -->
+    <div class="row gap-3">
+        <div class="col item-introduce">
+            <div class="mb-3 text-center">
+                <img src="{% static 'images/buildings.svg' %}" />
+            </div>
+            <div class="content-introduce">
+                <h2 class="text-center">Dự án</h2>
+                <p class="text-center info-introduce">Hơn 500 dự án trên toàn quốc</p>
+                <p class="short-content-introduce text-center">Bảng hàng trực tuyến của hơn 445 dự án duy nhất chỉ có trên Wesale</p>
+            </div>
+        </div>
+        <div class="col item-introduce">
+            <div class="mb-3 text-center">
+                <img src="{% static 'images/buildings.svg' %}" />
+            </div>
+            <div class="content-introduce">
+                <h2 class="text-center">Dự án</h2>
+                <p class="text-center info-introduce">Hơn 500 dự án trên toàn quốc</p>
+                <p class="short-content-introduce text-center ">Bảng hàng trực tuyến của hơn 445 dự án duy nhất chỉ có trên Wesale</p>
+            </div>
+        </div>
+        <div class="col item-introduce">
+            <div class="mb-3 text-center">
+                <img src="{% static 'images/buildings.svg' %}" />
+            </div>
+            <div class="content-introduce">
+                <h2 class="text-center">Dự án</h2>
+                <p class="text-center info-introduce">Hơn 500 dự án trên toàn quốc</p>
+                <p class="short-content-introduce text-center">Bảng hàng trực tuyến của hơn 445 dự án duy nhất chỉ có trên Wesale</p>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="container-project-outstanding">
+        <div class="tab-project-outstanding d-flex align-items-center mb-3">
+            <h1 class="text-main pe-5">Dự án nổi bật</h1>
+            <div class="d-flex gap-4">
+                <b>Shophouse</b>
+                <b>Biệt thự</b>
+            </div>
+        </div>
+        <div class="d-flex mb-3 gap-5 container-project-outstanding-top">
+            <div class="position-relative">
+                <img src="{% static 'images/Rectangle 5.png'%}" class="h-100">
+                <div class="position-absolute top-0 end-0 p-3">
+                    <div class="product-favourite d-flex align-items-center justify-content-center">
+                        <i class="bi bi-heart-fill text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-fill pt-4 pe-4">
+                <div class="d-flex gap-2 mb-3">
+                    <div class="open-for-sale status-sale text-white text-center">Đang mở bán</div>
+                    <div class="status-outstanding status-sale text-white text-center">Nổi bật</div>
+                    <div class="status-new status-sale text-white text-center">Mới</div>
+                </div>
+                <h2 class="pb-2">
+                    Shophouse The Center - Sun Grand City Hillside Residence
+                </h2>
+                <div class="row mb-3">
+                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                        <i class="bi bi-geo-alt icon-project"></i>
+                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                    </div>
+                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                        <i class="bi bi-geo-alt icon-project"></i>
+                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                    </div>
+                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                        <i class="bi bi-geo-alt icon-project"></i>
+                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                    </div>
+                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                        <i class="bi bi-geo-alt icon-project"></i>
+                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                    </div>
+                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                        <i class="bi bi-geo-alt icon-project"></i>
+                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                    </div>
+                </div>
+                <div class="d-flex container-price-project py-3">
+                    <span class="price-project text-main me-5">1.2 - 3.2 tỷ</span>
+                    <button class="flex-fill buy-now rounded-pill text-white border-0">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-4">
+                <div class="item-project">
+                    <div class="position-relative">
+                        <img src="{% static 'images/Rectangle 22.png' %}" class="w-100">
+                        <div class="position-absolute top-0 d-flex gap-2 mb-3 p-2">
+                            <div class="open-for-sale status-sale text-white text-center">Đang mở bán</div>
+                            <div class="status-outstanding status-sale text-white text-center">Nổi bật</div>
+                            <div class="status-new status-sale text-white text-center">Mới</div>
+                        </div>
+                        <div class="position-absolute top-0 end-0 p-3">
+                            <div class="product-favourite d-flex align-items-center justify-content-center">
+                                <i class="bi bi-heart-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="title-item-project">Vega City Nha Trang</h3>
+                        <div class="row mb-3">
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <div>
+                                    <i class="bi bi-geo-alt icon-project"></i>
+                                </div>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                        </div>
+                        <div class="d-flex container-price-project pt-3">
+                            <span class="item-price-project text-main me-5">1.2 - 3.2 tỷ</span>
+                            <button class="flex-fill buy-now rounded-pill text-white border-0">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="item-project">
+                    <div class="position-relative">
+                        <img src="{% static 'images/Rectangle 22.png' %}" class="w-100">
+                        <div class="position-absolute top-0 d-flex gap-2 mb-3 p-2">
+                            <div class="open-for-sale status-sale text-white text-center">Đang mở bán</div>
+                            <div class="status-outstanding status-sale text-white text-center">Nổi bật</div>
+                            <div class="status-new status-sale text-white text-center">Mới</div>
+                        </div>
+                        <div class="position-absolute top-0 end-0 p-3">
+                            <div class="product-favourite d-flex align-items-center justify-content-center">
+                                <i class="bi bi-heart-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="title-item-project">Vega City Nha Trang</h3>
+                        <div class="row mb-3">
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                        </div>
+                        <div class="d-flex container-price-project pt-3">
+                            <span class="item-price-project text-main me-5">1.2 - 3.2 tỷ</span>
+                            <button class="flex-fill buy-now rounded-pill text-white border-0">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="item-project">
+                    <div class="position-relative">
+                        <img src="{% static 'images/Rectangle 22.png' %}" class="w-100">
+                        <div class="position-absolute top-0 d-flex gap-2 mb-3 p-2">
+                            <div class="open-for-sale status-sale text-white text-center">Đang mở bán</div>
+                            <div class="status-outstanding status-sale text-white text-center">Nổi bật</div>
+                            <div class="status-new status-sale text-white text-center">Mới</div>
+                        </div>
+                        <div class="position-absolute top-0 end-0 p-3">
+                            <div class="product-favourite d-flex align-items-center justify-content-center">
+                                <i class="bi bi-heart-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="title-item-project">Vega City Nha Trang</h3>
+                        <div class="row mb-3">
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                <i class="bi bi-geo-alt icon-project"></i>
+                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div>
+                        </div>
+                        <div class="d-flex container-price-project pt-3">
+                            <span class="item-price-project text-main me-5">1.2 - 3.2 tỷ</span>
+                            <button class="flex-fill buy-now rounded-pill text-white border-0">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="rounded-pill text-white border-0 see-all-project-outstanding">Xem tất cả dự án <i class="bi bi-chevron-right"></i></button>
+        </div>
+    </div>
+    <!--  -->
+    <div class="container-img-banenr-content">
+        <swiper-container class="mySwiper" navigation="true" pagination="true" keyboard="true" mousewheel="true" css-mode="true">
+            <swiper-slide>
+                <img src="{% static 'images/Rectangle 2435.png' %}" class="img-banner-content">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="{% static 'images/Rectangle 2435.png' %}" class="img-banner-content">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="{% static 'images/Rectangle 2435.png' %}" class="img-banner-content">
+            </swiper-slide>
+        </swiper-container>
+    </div>
+    <!--  -->
+    <div class="container-area">
+        <h1 class="text-center pb-5">Khu vực nổi bật</h1>
+        <div class="area-bottom">
+            <div class="me-2">
+                <img src="{% static 'images/Rectangle 2403.png' %}" class="area-left">
+            </div>
+            <div class="flex-fill d-flex flex-column justify-content-between">
+                <div class="d-flex area-right-top">
+                    <div class="w-50">
+                        <img src="{% static 'images/Rectangle 2403.png' %}" class="w-100 img-area-right">
+                    </div>
+                    <div class="w-50">
+                        <img src="{% static 'images/Rectangle 2403.png' %}" class="w-100 img-area-right">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <img src="{% static 'images/Rectangle 10.png' %}" class="w-100 h-100" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+   
+     {% include 'components/slider01.html' %}
+    <!--  -->
+    <div class="container-buy-new">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="text-main">Mua bán lẻ bất động sản mới nhất</h1>
+            <button class="see-all rounded-pill bg-white">Xem tất cả <i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="row">
+            <div class="col-6 pb-2">
+                <div class="d-flex gap-4">
+                    <div>
+                        <img src="{% static 'images/Rectangle 11.png'%}" class="img-buy-new">
+                    </div>
+                    <div class="flex-fill pe-5">
+                        <p class="title-buy-new">The Empire Vinhomes Ocean Park 2 Văn Giang, Hưng Yên</p>
+                        <div class="row mb-2">
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                        </div>
+                        <div class="price-buy-new pt-1">
+                            <span>1.2 - 3.2 tỷ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 pb-2">
+                <div class="d-flex gap-4">
+                    <div>
+                        <img src="{% static 'images/Rectangle 11.png'%}" class="img-buy-new">
+                    </div>
+                    <div class="flex-fill pe-5">
+                        <p class="title-buy-new">The Empire Vinhomes Ocean Park 2 Văn Giang, Hưng Yên</p>
+                        <div class="row mb-2">
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                        </div>
+                        <div class="price-buy-new pt-1">
+                            <span>1.2 - 3.2 tỷ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 pb-2">
+                <div class="d-flex gap-4">
+                    <div>
+                        <img src="{% static 'images/Rectangle 11.png'%}" class="img-buy-new">
+                    </div>
+                    <div class="flex-fill pe-5">
+                        <p class="title-buy-new">The Empire Vinhomes Ocean Park 2 Văn Giang, Hưng Yên</p>
+                        <div class="row mb-2">
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                        </div>
+                        <div class="price-buy-new pt-1">
+                            <span>1.2 - 3.2 tỷ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 pb-2">
+                <div class="d-flex gap-4">
+                    <div>
+                        <img src="{% static 'images/Rectangle 11.png'%}" class="img-buy-new">
+                    </div>
+                    <div class="flex-fill pe-5">
+                        <p class="title-buy-new">The Empire Vinhomes Ocean Park 2 Văn Giang, Hưng Yên</p>
+                        <div class="row mb-2">
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                            <div class="col-6 item-info-buy-new py-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-main">Khánh Hoà</span>
+                            </div>
+                        </div>
+                        <div class="price-buy-new pt-1">
+                            <span>1.2 - 3.2 tỷ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="container-review">
+        <h1 class="text-main text-center mb-3">Review dự án</h1>
+        <div class="row">
+            <div class="col-6 d-flex">
+                <div class="me-3">
+                    <img src="{% static 'images/Rectangle 2468.png'%}" class="img-review">
+                </div>
+                <div class="flex-fill">
+                    <div class="content-review-left mb-4">
+                        <p class="title-review">Review Shophouse của Sun Grand City Hillside Residence</p>
+                        <div>
+                            <div class="d-flex mb-2 gap-2">
+                                <i class="bi bi-building"></i>
+                                <span class="name-info-review text-truncate text-main">SunGrand City Hillside Reside...</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <i class="bi bi-building"></i>
+                                <span class="name-info-review text-truncate text-main">SunGrand City Hillside Reside...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="rounded-circle avatar-review">
+                            <img src="{% static 'images/Rectangle 2469.png'%}" class="w-100 h-100">
+                        </div>
+                        <div>
+                            <p class="mb-0 name-avatar text-main">Anh Trần Hải Minh</p>
+                            <span class="name-position text-main">Wesaler</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="me-3">
+                    <img src="{% static 'images/Rectangle 2468.png'%}" class="img-review">
+                </div>
+                <div class="flex-fill">
+                    <div class="content-review-left mb-4">
+                        <p class="title-review">Review Shophouse của Sun Grand City Hillside Residence</p>
+                        <div>
+                            <div class="d-flex mb-2 gap-2">
+                                <i class="bi bi-building"></i>
+                                <span class="name-info-review text-truncate text-main">SunGrand City Hillside Reside...</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <i class="bi bi-building"></i>
+                                <span class="name-info-review text-truncate text-main">SunGrand City Hillside Reside...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="rounded-circle avatar-review">
+                            <img src="{% static 'images/Rectangle 2469.png'%}" class="w-100 h-100">
+                        </div>
+                        <div>
+                            <p class="mb-0 name-avatar text-main">Anh Trần Hải Minh</p>
+                            <span class="name-position text-main">Wesaler</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script type="text/javascript">
+let items = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 4
+    let next = el.nextElementSibling
+    for (var i = 1; i < minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+            next = items[0]
+        }
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+</script>
+{% endblock %}
