@@ -1,0 +1,134 @@
+.container-content-banner {
+
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.button-search-project {
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 17.5px 66px;
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.input-search-project {
+
+    background: #F0F1F2;
+}
+
+.container-search {
+
+    margin-bottom: 70px;
+}
+
+.container-search-top {
+
+    border-bottom: 1px dashed #000000;
+}
+
+.title-search {
+
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    color: #A3A3A3;
+}
+
+.select-type-search {
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.nationwide-right {
+
+    padding: 33px 18px 33px 36px;
+    background: #F0F1F2;
+}
+
+.container-choose {
+    border-bottom: 1px dashed #00000066;
+}
+
+.content-choose {
+    width: 350px;
+}
+
+.count-projects {
+
+    font-family: Roboto;
+    color: #3B3B3D;
+}
+
+.count-projects span {
+    font-size: 16px;
+    color: #FF7A00;
+}
+
+.sort-projects {
+
+    font-family: Roboto;
+    color: #3B3B3D;
+
+}
+
+.sort-projects select {
+    color: #1728CD;
+    font-weight: 700;
+    min-width: 100px;
+}
+
+.container-img-advertisement {
+
+    width: 235px;
+    height: 186px;
+}
+
+.title-advertisement {
+
+    font-size: 18px;
+}
+
+.icon-advertisement {
+
+    font-size: 14px;
+}
+
+.price-advertisement span {
+
+    font-size: 32px;
+    font-weight: 900;
+    color: #FF7A00;
+}
+
+.price-advertisement div {
+
+    font-size: 16px;
+    font-weight: 500;
+    color: #1728CD;
+}
+
+.price-advertisement {
+
+    border-top: 1px dashed;
+    #00000066;
+}
+
+.button-see-all-projects {
+
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: center;
+    color: #000960;
+    padding: 11px 30px;
+    border: 1px solid #000960;
+    background: none;
+}
+
+.container-advertisement {
+
+    margin-bottom: 40px;
+}

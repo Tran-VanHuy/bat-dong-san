@@ -13,3 +13,17 @@ class HomePage(TemplateView):
 		context = super().get_context_data(**kwargs)
 		return context;
 
+class ListProjectPage(TemplateView):
+	template_name = "projects/list-projects.html"
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		return context;
+
+class AdvertisementPage(TemplateView):
+	template_name = "advertisement/advertisement.html"
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		return context
+

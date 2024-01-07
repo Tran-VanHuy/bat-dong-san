@@ -20,5 +20,7 @@ from ui.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HomePage.as_view(), name="home")
+    path('', HomePage.as_view(), name="home"),
+    path("danh-sach-du-an", ListProjectPage.as_view(), name="list-projects"),
+    path("danh-sach-tin-rao", AdvertisementPage.as_view(), name="advertisement")
 ]

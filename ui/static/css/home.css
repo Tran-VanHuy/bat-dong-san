@@ -342,13 +342,64 @@
     font-weight: 400;
 }
 
+.conatiner-strengths {
+
+    margin-bottom: 70px;
+}
+
+.container-member {
+
+    margin-bottom: 70px;
+}
+
+.avatar-member {
+
+    width: 100px;
+    height: 100px;
+}
+
+.name-member {
+
+    font-family: Roboto;
+    font-size: 16px;
+}
+
+.title-strengths {
+
+    font-size: 22px;
+}
+
+.container-partner {
+
+    margin-bottom: 70px;
+}
+
+.input-contact {
+
+    background: #F0F1F2;
+    height: 58px;
+}
+
+.note-contact{
+
+    background: #F0F1F2;
+}
+
+.button-submit-contact {
+
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+}
+
 @media (max-width: 767px) {
     .carousel-inner .carousel-item>div {
         display: none;
     }
 
     .carousel-inner .carousel-item>div:first-child {
-        display: block;
+        ` display: block;
     }
 }
 

@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-
     {% block static %}{% endblock %}
 </head>
 
@@ -20,8 +19,8 @@
             <img src="{% static 'images/Group.svg'%}">
             <div>
                 <ul class="d-flex align-items-center mb-0 ps-0 header-center">
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Dự án</a></li>
+                    <li><a href="{% url 'home' %}">Trang chủ</a></li>
+                    <li><a href="{% url 'list-projects' %}">Dự án</a></li>
                     <li><a href="#">Mua bán</a></li>
                     <li><a href="#">Tin tức</a></li>
                     <li><a href="#">Site tour</a></li>
@@ -32,9 +31,9 @@
             </div>
             <div class="d-flex align-items-center gap-2">
                 <div class="rounded-circle header-icon d-flex align-items-center justify-content-center"><i class="bi bi-heart-fill text-danger"></i></div>
-              	<div class="rounded-circle header-icon d-flex align-items-center justify-content-center"><i class="bi bi-search"></i></div>
+                <div class="rounded-circle header-icon d-flex align-items-center justify-content-center"><i class="bi bi-search"></i></div>
                 <div>
-                	<button class="button-login rounded-pill text-white h-100 flex-fill border-0 px-3 py-2">Đăng nhập</button>
+                    <button class="button-login rounded-pill text-white h-100 flex-fill border-0 px-3 py-2">Đăng nhập</button>
                 </div>
             </div>
         </div>
@@ -42,7 +41,96 @@
     <main>
         {% block content %}{% endblock %}
     </main>
-    <footer>
+    <footer class="container-footer">
+        <div class="content-footer">
+            <div class="row gap-5 mb-3">
+                <div class="col">
+                    <h4 class="text-white mb-3">Liên Hệ Chúng Tôi</h4>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-geo-alt text-white"></i>
+                        <p class="text-white mb-0">Toà HH2 Bắc Hà, Số 15 Tố Hữu, Nam Từ Liêm, Hà Nội</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-telephone-outbound text-white"></i>
+                        <p class="text-white mb-0">024 254 254 52</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-envelope text-white"></i>
+                        <p class="text-white mb-0">info@wesale.vn</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4 class="text-white mb-3">Giới Thiệu</h4>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-geo-alt text-white"></i>
+                        <p class="text-white mb-0">Về chúng tôi</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-telephone-outbound text-white"></i>
+                        <p class="text-white mb-0">Nghề nghiệp</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-envelope text-white"></i>
+                        <p class="text-white mb-0">Hồ sơ thương hiệu</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-envelope text-white"></i>
+                        <p class="text-white mb-0">Tin tức</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-envelope text-white"></i>
+                        <p class="text-white mb-0">Videos</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4 class="text-white mb-3">Khám Phá</h4>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-geo-alt text-white"></i>
+                        <p class="text-white mb-0">Dự án</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-telephone-outbound text-white"></i>
+                        <p class="text-white mb-0">Nhà bán lẻ</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-envelope text-white"></i>
+                        <p class="text-white mb-0">Nhà cho thuê</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-envelope text-white"></i>
+                        <p class="text-white mb-0">Đăng tin bán nhà</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-envelope text-white"></i>
+                        <p class="text-white mb-0">Đăng tin cho thuê nhà</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4 class="text-white mb-3">Điều khoản</h4>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-geo-alt text-white"></i>
+                        <p class="text-white mb-0">Quy chế hoạt động</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-telephone-outbound text-white"></i>
+                        <p class="text-white mb-0">Chính sách bảo mật</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <i class="bi bi-envelope text-white"></i>
+                        <p class="text-white mb-0">Cơ chế giải quyết tranh chấp</p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <img src="{% static 'images/Frame.png'%}">
+                <span class="text-white">© 2000-2021, All Rights Reserved</span>
+                <div class="d-flex gap-3">
+                    <img src="{% static 'images/Facebook.png'%}">
+                    <img src="{% static 'images/YouTube.png'%}">
+                    <img src="{% static 'images/TikTok.png'%}">
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

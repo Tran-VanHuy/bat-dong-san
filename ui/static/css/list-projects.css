@@ -1,0 +1,250 @@
+.container-content-banner {
+
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.button-search-project {
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 17.5px 66px;
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.input-search-project {
+
+    background: #F0F1F2;
+}
+
+.container-search-top {
+
+    border-bottom: 1px dashed #000000;
+}
+
+.title-search {
+
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    color: #A3A3A3;
+}
+
+.select-type-search {
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.buy-now {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.container-project-outstanding-top {
+
+    box-shadow: 0px 0px 20px 0px #0000001A;
+}
+
+.price-project {
+
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.container-price-project {
+
+    border-top: 1px dashed #00000066;
+}
+
+.buy-now {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.product-favourite {
+    width: 23px;
+    height: 23px;
+    background: #3B3B3D;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+
+.container-search {
+
+    margin-bottom: 60px;
+}
+
+.list-projects-outstanding {
+
+    margin-bottom: 40px;
+}
+
+.count-projects {
+
+    font-family: Roboto;
+    color: #3B3B3D;
+}
+
+.count-projects span {
+    font-size: 16px;
+    color: #FF7A00;
+}
+
+.sort-projects {
+
+    font-family: Roboto;
+    color: #3B3B3D;
+
+}
+
+.sort-projects select {
+    color: #1728CD;
+    font-weight: 700;
+}
+
+
+
+.nationwide-right {
+
+    background: #F0F1F2;
+}
+
+.nationwide-right {
+
+    padding: 33px 18px 33px 36px;
+}
+
+.title-choose {
+
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.item-choose {
+
+    font-family: Roboto;
+    /*    color: #FF7A00;*/
+}
+
+.content-choose {
+
+    width: 350px;
+}
+
+.container-choose {
+
+    border-bottom: 1px dashed #00000066;
+
+}
+
+.container-choose:last-child {
+
+    border-bottom: none;
+    padding-bottom: 0px !important;
+}
+
+.item-price-project {
+    font-family: Roboto;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.title-icon-project {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #3B3B3D;
+}
+
+.item-project {
+
+    border: 1px;
+    box-shadow: 0px 0px 20px 0px #0000001A;
+}
+
+.container-review {
+
+    border-bottom: 1px dashed #00000066;
+
+}
+
+.nationwide-review {
+
+    padding: 40px;
+}
+
+.nationwide-review {
+
+    width: 413px;
+}
+
+.nationwide-projects-outstanding {
+
+    padding: 40px;
+    background: #F0F1F2;
+}
+
+.short-content {
+
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.nationwide {
+
+    margin-bottom: 70px;
+}
+
+.see-all-news-projects {
+
+    padding: 7px 30px;
+    border: 1px solid #000960;
+    color: #000960;
+    font-size: 16px;
+    background: none;
+}
+
+.container-news-right {
+
+    max-width: 522px;
+}
+
+.title-video-news {
+
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 35px;
+}
+
+.create-at-news-project {
+
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.title-news {
+
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.create-at-news-project-left {
+
+	font-size:  12px;
+}
+
+.container-news-right .slick-dots {
+
+	bottom: 25px !important;
+}

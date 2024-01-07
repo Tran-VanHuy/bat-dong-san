@@ -1,3 +1,10 @@
+body {
+
+    font-family: Roboto !important;
+
+    overflow-x: hidden;
+}
+
 header {
 
     margin: 0 auto;
@@ -96,4 +103,44 @@ h3 {
     font-family: Roboto;
     font-size: 18px;
     font-weight: 700;
+}
+
+.container-footer {
+
+    background: #3B3B3D;
+}
+
+.content-footer {
+
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 70px 0px;
+}
+
+.status-sale {
+
+    border-radius: 10px;
+    padding: 5px 12px;
+    font-size: 12px;
+}
+
+.open-for-sale {
+
+    background: #1728CD;
+}
+
+.status-outstanding {
+
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.status-new {
+
+    background: #EC3535;
+}
+
+.info-review {
+
+    font-family: Roboto;
+    font-size: 14px;
 }
