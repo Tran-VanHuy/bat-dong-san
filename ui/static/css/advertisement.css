@@ -132,3 +132,43 @@
 
     margin-bottom: 40px;
 }
+
+.item-project {
+    box-shadow: 0px 0px 20px 0px #0000001A;
+}
+
+.title-item-project {
+    height: 52px;
+    overflow: hidden;
+}
+
+.container-price-project {
+    border-top: 1px dashed #00000066;
+}
+
+.item-price-project {
+    font-family: Roboto;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.buy-now {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.title-icon-project {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #3B3B3D;
+}
+
+.product-favourite {
+    width: 23px;
+    height: 23px;
+    background: #3B3B3D;
+    border-radius: 5px;
+    font-size: 12px;
+}

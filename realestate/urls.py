@@ -22,5 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePage.as_view(), name="home"),
     path("danh-sach-du-an", ListProjectPage.as_view(), name="list-projects"),
-    path("danh-sach-tin-rao", AdvertisementPage.as_view(), name="advertisement")
+    path("danh-sach-tin-rao", AdvertisementPage.as_view(), name="advertisement"),
+    path("chi-tiet-tin-rao/<slug>", AdvertisementDetailPage.as_view(), name="advertisement-detail"),
+    path("danh-sach-tin-tuc", NewsPage.as_view(), name="news")
+
 ]

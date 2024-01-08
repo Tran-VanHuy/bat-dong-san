@@ -27,3 +27,17 @@ class AdvertisementPage(TemplateView):
 		context = super().get_context_data(**kwargs)
 		return context
 
+class AdvertisementDetailPage(TemplateView):
+	template_name = "advertisement/advertisement-detail.html"
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		return context
+
+class NewsPage(TemplateView):
+	template_name = "news/news.html"
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		return context
+
