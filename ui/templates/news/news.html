@@ -2,9 +2,340 @@
 {% load static %}
 {% block title %} Danh sách tin tức {% endblock %}
 {% block static %}
-<link rel="stylesheet" type="text/css" href="css/news.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
 {% endblock %}
 <!--  -->
 {% block content %}
-<div class="container-content"></div>
+<div class="container-content">
+    <!-- Điểm tin -->
+    <div class="container-news-outstanding d-flex justify-content-between">
+        <div class="container-news-outstanding-left rounded position-relative  overflow-hidden">
+            <img src="{% static 'images/Frame 733.png' %}" class="rounded" />
+            <a href="#" class="position-absolute bottom-0 start-0 right-0 ps-3 pe-5 pb-3 title-news">
+                <div class="">
+                    <h2 class="text-white">Startup công nghệ bất động sản Reti gọi vốn thành công từ CyberAgent và VIC Partners</h2>
+                    <span class="text-white">15 tháng Tư, 2022</span>
+                </div>
+            </a>
+        </div>
+        <div class="d-flex gap-2">
+            <div class="d-flex flex-column justify-content-between">
+                <div class="position-relative">
+                    <img src="{% static 'images/Frame 740.png' %}">
+                    <a href="#" class="position-absolute bottom-0 start-0 right-0 ps-3 pe-5 pb-3 title-news">
+                        <div class="">
+                            <div>
+                                <b class="text-white title-new-right">RETI là đại lý F1 chính thức Dimond Crown Hai Phong</b>
+                            </div>
+                            <span class="text-white">15 tháng Tư, 2022</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="position-relative">
+                    <img src="{% static 'images/Frame 740.png' %}">
+                    <a href="#" class="position-absolute bottom-0 start-0 right-0 ps-3 pe-5 pb-3 title-news">
+                        <div class="">
+                            <div>
+                                <b class="text-white title-new-right">RETI là đại lý F1 chính thức Dimond Crown Hai Phong</b>
+                            </div>
+                            <span class="text-white">15 tháng Tư, 2022</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="rounded container-point-news">
+                <div class="mb-2">
+                    <b class="point-news">Điểm tin</b>
+                </div>
+                <div class="d-flex flex-column gap-3">
+                    <div class="d-flex gap-1 item-point-news">
+                        <i class="bi bi-dot"></i>
+                        <div>
+                            <div>
+                                <b class="create-at">1 tiếng trước</b>
+                            </div>
+                            <p class="content-points-news">Hiệp hội Giáo dục quốc tế Úc vừa thực hiện nghiên cứu cho việc nghiên cứu...</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-1 item-point-news">
+                        <i class="bi bi-dot"></i>
+                        <div>
+                            <div>
+                                <b class="create-at">1 tiếng trước</b>
+                            </div>
+                            <p class="content-points-news">Hiệp hội Giáo dục quốc tế Úc vừa thực hiện nghiên cứu cho việc nghiên cứu...</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-1 item-point-news">
+                        <i class="bi bi-dot"></i>
+                        <div>
+                            <div>
+                                <b class="create-at">1 tiếng trước</b>
+                            </div>
+                            <p class="content-points-news">Hiệp hội Giáo dục quốc tế Úc vừa thực hiện nghiên cứu cho việc nghiên cứu...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video review -->
+    <div class="container-reviews">
+        <h1 class="text-main mb-3">Video review</h1>
+        <div class="carousel-review-news">
+            <div>
+                <div>
+                    <img src="{% static 'images/Rectangle 2468 (1).png' %}" />
+                </div>
+                <a href="#">
+                    <p class="title-review mb-1 text-main">Hiệp hội Giáo dục quốc tế Úc vừa thực hiện nghiên cứu cho việc nghiên cứu...</p>
+                </a>
+                <span class="create-at-review text-main d-flex align-items-center gap-2"><i class="bi bi-calendar4"></i> 8/5/2022</span>
+            </div>
+            <div>
+                <div>
+                    <img src="{% static 'images/Rectangle 2468 (1).png' %}" />
+                </div>
+                <a href="#">
+                    <p class="title-review mb-1 text-main">Hiệp hội Giáo dục quốc tế Úc vừa thực hiện nghiên cứu cho việc nghiên cứu...</p>
+                </a>
+                <span class="create-at-review text-main d-flex align-items-center gap-2"><i class="bi bi-calendar4"></i> 8/5/2022</span>
+            </div>
+            <div>
+                <div>
+                    <img src="{% static 'images/Rectangle 2468 (1).png' %}" />
+                </div>
+                <a href="#">
+                    <p class="title-review mb-1 text-main">Hiệp hội Giáo dục quốc tế Úc vừa thực hiện nghiên cứu cho việc nghiên cứu...</p>
+                </a>
+                <span class="create-at-review text-main d-flex align-items-center gap-2"><i class="bi bi-calendar4"></i> 8/5/2022</span>
+            </div>
+            <div>
+                <div>
+                    <img src="{% static 'images/Rectangle 2468 (1).png' %}" />
+                </div>
+                <a href="#">
+                    <p class="title-review mb-1 text-main">Hiệp hội Giáo dục quốc tế Úc vừa thực hiện nghiên cứu cho việc nghiên cứu...</p>
+                </a>
+                <span class="create-at-review text-main d-flex align-items-center gap-2"> <i class="bi bi-calendar4"></i> 8/5/2022</span>
+            </div>
+            <div>
+                <div>
+                    <img src="{% static 'images/Rectangle 2468 (1).png' %}" />
+                </div>
+                <a href="#">
+                    <p class="title-review mb-1 text-main">Hiệp hội Giáo dục quốc tế Úc vừa thực hiện nghiên cứu cho việc nghiên cứu...</p>
+                </a>
+                <span class="create-at-review text-main d-flex align-items-center gap-2"><i class="bi bi-calendar4"></i> 8/5/2022</span>
+            </div>
+        </div>
+    </div>
+    <!-- Tin dự án -->
+    <div class="container-news-projects d-flex gap-3">
+        <div class="flex-fill">
+            <div class="mb-4">
+                <div class=" d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="text-main">Tin dự án</h1>
+                    <a href="#"><b>Xem thêm</b></a>
+                </div>
+                <div class="d-flex news-projects-top">
+                    <img src="{% static 'images/Image (1).png' %}" class="img-news-projects">
+                    <div class="info-news-project">
+                        <div class="mb-2">
+                            <b class="text-main title-news-project-top pe-5">Trải nghiệm sống 1 ngày tại Sun Grand City</b>
+                        </div>
+                        <div class="create-at-news-projects text-main mb-3">
+                            <i class="bi bi-calendar4 text-main me-2"></i> 8/5/2022
+                        </div>
+                        <p class="mb-0 text-main">Trong bối cảnh kinh tế toàn cầu đang biến động mạnh do dịch bệnh Covid-19, hầu hết các kênh đầu tư đều phải chịu...</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 d-flex mb-3">
+                        <img src="{% static 'images/Image (2).png' %}" class="img-news-projects-bottom">
+                        <div class="info-news-project-bottom item-news-project-bottom">
+                            <a href="#">
+                                <p class="title-news-projects-bottom text-main mb-1">Trải nghiệm sống 1 ngày tại Sun Grand City</p>
+                            </a>
+                            <div class="create-at-news-projects text-main">
+                                <i class="bi bi-calendar4 text-main me-2"></i> 8/5/2022
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex mb-3">
+                        <img src="{% static 'images/Image (2).png' %}" class="img-news-projects-bottom">
+                        <div class="info-news-project-bottom item-news-project-bottom">
+                            <a href="#">
+                                <p class="title-news-projects-bottom text-main mb-1">Trải nghiệm sống 1 ngày tại Sun Grand City</p>
+                            </a>
+                            <div class="create-at-news-projects text-main">
+                                <i class="bi bi-calendar4 text-main me-2"></i> 8/5/2022
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex mb-3">
+                        <img src="{% static 'images/Image (2).png' %}" class="img-news-projects-bottom">
+                        <div class="info-news-project-bottom item-news-project-bottom">
+                            <a href="#">
+                                <p class="title-news-projects-bottom text-main mb-1">Trải nghiệm sống 1 ngày tại Sun Grand City</p>
+                            </a>
+                            <div class="create-at-news-projects text-main">
+                                <i class="bi bi-calendar4 text-main me-2"></i> 8/5/2022
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex mb-3">
+                        <img src="{% static 'images/Image (2).png' %}" class="img-news-projects-bottom">
+                        <div class="info-news-project-bottom item-news-project-bottom">
+                            <a href="#">
+                                <p class="title-news-projects-bottom text-main mb-1">Trải nghiệm sống 1 ngày tại Sun Grand City</p>
+                            </a>
+                            <div class="create-at-news-projects text-main">
+                                <i class="bi bi-calendar4 text-main me-2"></i> 8/5/2022
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-videos mb-5">
+                <div class=" d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="text-main">Video</h1>
+                    <a href="#"><b>Xem thêm</b></a>
+                </div>
+                <div class="d-flex justify-content-between gap-4">
+                    <div>
+                        <div class="container-videos-left">
+                            <div class="mb-3">
+                                <img src="{% static 'images/Rectangle 2439 (1).png' %}" class="w-100">
+                            </div>
+                            <div class="mb-3">
+                                <b class="title-video-left text-main pe-5">Ứng dụng nền tảng công nghệ Proptech vào thị trường bất động sản</b>
+                            </div>
+                            <span class="create-at-review text-main d-flex align-items-center gap-2"><i class="bi bi-calendar4"></i> 8/5/2022</span>
+                        </div>
+                    </div>
+                    <div class="flex-fill d-flex flex-column justify-content-between">
+                        <div class="d-flex gap-3">
+                            <div>
+                                <img src="{% static 'images/Rectangle 2429.png' %}">
+                            </div>
+                            <div>
+                                <div class="mb-2 d-flex">
+                                    <b class="text-main title-video-right">Hoa Tiên Paradise mở cửa đón khách, sẵn sàng đón chào diện mới</b>
+                                </div>
+                                <span class="create-at-review text-main d-flex align-items-center gap-2"><i class="bi bi-calendar4"></i> 8/5/2022</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div>
+                                <img src="{% static 'images/Rectangle 2429.png' %}">
+                            </div>
+                            <div>
+                                <div class="mb-2 d-flex">
+                                    <b class="text-main title-video-right">Hoa Tiên Paradise mở cửa đón khách, sẵn sàng đón chào diện mới</b>
+                                </div>
+                                <span class="create-at-review text-main d-flex align-items-center gap-2"><i class="bi bi-calendar4"></i> 8/5/2022</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div>
+                                <img src="{% static 'images/Rectangle 2429.png' %}">
+                            </div>
+                            <div>
+                                <div class="mb-2 d-flex">
+                                    <b class="text-main title-video-right">Hoa Tiên Paradise mở cửa đón khách, sẵn sàng đón chào diện mới</b>
+                                </div>
+                                <span class="create-at-review text-main d-flex align-items-center gap-2"><i class="bi bi-calendar4"></i> 8/5/2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+            	 <div class=" d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="text-main">Tin thị trường</h1>
+                    <a href="#"><b>Xem thêm</b></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container-new-projects-right">
+                <div class="container-category-news">
+                    <div class="mb-3"><b class="category-news">Danh mục tin tức</b></div>
+                    <div class="ps-2 d-flex flex-column gap-3">
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Tin dự án</span>
+                        </div>
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Tin thị trường</span>
+                        </div>
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Tin nội bộ</span>
+                        </div>
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Kiên trúc - Phong thủy</span>
+                        </div>
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Chính sách quy hoạch</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-category-news">
+                    <div class="mb-3"><b class="category-news">Theo dõi chúng tôi</b></div>
+                    <div class="d-flex gap-3">
+                        <a href="#">
+                            <img src="{% static 'images/Facebook.png' %}" />
+                        </a>
+                        <a href="#">
+                            <img src="{% static 'images/Youtube.png' %}" />
+                        </a>
+                        <a href="#">
+                            <img src="{% static 'images/TikTok.png' %}" />
+                        </a>
+                    </div>
+                </div>
+                <div class="container-category-news">
+                    <div class="mb-3"><b class="category-news">Tin xem nhiều</b></div>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex gap-3 item-news-see">
+                            <img src="{% static 'images/Image.png' %}" class="img-news-see">
+                            <a href="#">
+                                <p class="title-news-see text-main pe-5">Startup công nghệ bất động sản RETI gọi vốn thành công từ CyberAgnet và...</p>
+                            </a>
+                        </div>
+                        <div class="d-flex gap-3 item-news-see">
+                            <img src="{% static 'images/Image.png' %}" class="img-news-see">
+                            <a href="#">
+                                <p class="title-news-see text-main pe-5">Startup công nghệ bất động sản RETI gọi vốn thành công từ CyberAgnet và...</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-category-news">
+                    <div class="mb-3"><b class="category-news">Nhận tin tức dự án mới</b></div>
+                    <div class="d-flex flex-column gap-3">
+                        <input type="" name="" class="rounded email-input-new-news-project border-0" placeholder="Email">
+                        <button class="text-white rounded-pill button-register border-0">Đăng ký</button>
+                    </div>
+                </div>
+                <div class="container-category-news">
+                    <a href="#">
+                        <img src="{% static 'images/image 21.png' %}" class="w-100">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</div>
+<!-- script -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{% static 'js/news.js' %}" type="text/javascript"></script>
 {% endblock %}
