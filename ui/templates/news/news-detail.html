@@ -1,0 +1,228 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Chi tiết tin tức{% endblock %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/news-detail.css' %}">
+{% endblock%}
+<!--  -->
+{% block content %}
+<div class="container-content">
+    <div class="d-flex">
+        <div class="flex-fill">
+            <div class="d-flex gap-3 hag-tag-top mb-4">
+                <button class="text-main border-0 px-3 py-1 rounded"><b>Tin tức</b></button>
+                <button class="text-main border-0 px-3 py-1 rounded"><b>Tin dự án</b></button>
+                <button class="text-main border-0 px-3 py-1 rounded"><b>Vinhomes</b></button>
+                <button class="text-main border-0 px-3 py-1 rounded"><b>Dự án nổi bật</b></button>
+            </div>
+            <div class="mb-4">
+                <h1 class="text-main mb-3">Vinhomes The Empire Hưng Yên: Tiến độ mở bán & Bảng giá 2022</h1>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="create-at-news text-main d-flex align-items-center gap-2 mb-2"><i class="bi bi-calendar4"></i> 8/5/2022</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-4 mb-4">
+                        <span class="share-news text-main">Chia sẻ:</span>
+                        <div class="d-flex gap-3">
+                            <img src="{% static 'images/Facebook.png' %}" />
+                            <img src="{% static 'images/Youtube.png' %}" />
+                            <img src="{% static 'images/TikTok.png' %}" />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p>nội dung</p>
+                </div>
+            </div>
+            <div>
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h1 class="text-main">Dự án liên quan</h1>
+                    <button class="button-see-all-projects rounded-pill"><b>Xem tất cả</b></button>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="item-project h-100 d-flex flex-column">
+                            <div class="position-relative">
+                                <img src="/static/images/Rectangle%2022.png" class="w-100">
+                                <div class="position-absolute top-0 d-flex gap-2 mb-3 p-2">
+                                    <div class="open-for-sale status-sale text-white text-center">Đang mở bán</div>
+                                    <div class="status-outstanding status-sale text-white text-center">Nổi bật</div>
+                                    <div class="status-new status-sale text-white text-center">Mới</div>
+                                </div>
+                                <div class="position-absolute top-0 end-0 p-3">
+                                    <div class="product-favourite d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-heart-fill text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 d-flex flex-column justify-content-between h-100">
+                                <h3 class="title-item-project">Vega City Nha Trang</h3>
+                                <div class="row mb-3">
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div>
+                                            <i class="bi bi-geo-alt icon-project"></i>
+                                        </div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex container-price-project pt-3">
+                                    <span class="item-price-project text-main me-5">1.2 - 3.2 tỷ</span>
+                                    <button class="flex-fill buy-now rounded-pill text-white border-0">Mua ngay</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="item-project h-100 d-flex flex-column">
+                            <div class="position-relative">
+                                <img src="/static/images/Rectangle%2022.png" class="w-100">
+                                <div class="position-absolute top-0 d-flex gap-2 mb-3 p-2">
+                                    <div class="open-for-sale status-sale text-white text-center">Đang mở bán</div>
+                                    <div class="status-outstanding status-sale text-white text-center">Nổi bật</div>
+                                    <div class="status-new status-sale text-white text-center">Mới</div>
+                                </div>
+                                <div class="position-absolute top-0 end-0 p-3">
+                                    <div class="product-favourite d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-heart-fill text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 d-flex flex-column justify-content-between h-100">
+                                <h3 class="title-item-project">Vega City Nha Trang</h3>
+                                <div class="row mb-3">
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div>
+                                            <i class="bi bi-geo-alt icon-project"></i>
+                                        </div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                    <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                        <div><i class="bi bi-geo-alt icon-project"></i></div>
+                                        <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex container-price-project pt-3">
+                                    <span class="item-price-project text-main me-5">1.2 - 3.2 tỷ</span>
+                                    <button class="flex-fill buy-now rounded-pill text-white border-0">Mua ngay</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container-new-projects-right">
+                <div class="container-category-news">
+                    <div class="mb-3"><b class="category-news">Danh mục tin tức</b></div>
+                    <div class="ps-2 d-flex flex-column gap-3">
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Tin dự án</span>
+                        </div>
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Tin thị trường</span>
+                        </div>
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Tin nội bộ</span>
+                        </div>
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Kiên trúc - Phong thủy</span>
+                        </div>
+                        <div class="item-category d-flex align-items-center gap-2">
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Chính sách quy hoạch</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-category-news">
+                    <div class="mb-3"><b class="category-news">Bài viết liên quan</b></div>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex gap-3 item-news-see">
+                            <img src="/static/images/Image.png" class="img-news-see">
+                            <a href="#">
+                                <p class="title-news-see text-main pe-5">Startup công nghệ bất động sản RETI gọi vốn thành công từ CyberAgnet và...</p>
+                            </a>
+                        </div>
+                        <div class="d-flex gap-3 item-news-see">
+                            <img src="/static/images/Image.png" class="img-news-see">
+                            <a href="#">
+                                <p class="title-news-see text-main pe-5">Startup công nghệ bất động sản RETI gọi vốn thành công từ CyberAgnet và...</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-category-news">
+                    <div class="mb-3"><b class="category-news">Liên hệ với chúng tôi</b></div>
+                    <div class="d-flex flex-column gap-3">
+                        <input type="text" name="" class="rounded email-input-new-news-project border-0" placeholder="Họ tên">
+                        <input type="text" name="" class="rounded email-input-new-news-project border-0" placeholder="Số điện thoại">
+                        <input type="text" name="" class="rounded email-input-new-news-project border-0" placeholder="Email">
+                        <textarea type="text" name="" class="rounded email-input-new-news-project border-0 note-contact" placeholder="Ghi chú"></textarea>
+                        <button class="text-white rounded-pill button-register border-0">Đăng ký</button>
+                    </div>
+                </div>
+                <div class="container-category-news">
+                    <div class="mb-3"><b class="category-news">Thẻ tag</b></div>
+                    <div class="d-flex gap-3 hag-tag-top flex-wrap">
+                        <button class="text-main border-0 px-3 py-1 rounded"><b>Tin tức</b></button>
+                        <button class="text-main border-0 px-3 py-1 rounded"><b>Tin dự án</b></button>
+                        <button class="text-main border-0 px-3 py-1 rounded"><b>Vinhomes</b></button>
+                        <button class="text-main border-0 px-3 py-1 rounded"><b>Dự án nổi bật</b></button>
+                        <button class="text-main border-0 px-3 py-1 rounded"><b>Dự án nổi bật</b></button>
+                    </div>
+                </div>
+                <div class="container-category-news">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="mb-3"><b class="category-news">Sitetour</b></div>
+                        <a href="#"><b>Xem thêm</b></a>
+                    </div>
+                    <div>
+                        <img src="/static/images/Rectangle%202495.png" class="w-100 mb-3">
+                        <h3 class="text-main mb-3">Trải nghiệm sống 1 ngày tại Sun Grand City</h3>
+                        <div class="info-review text-main mb-3">
+                            <i class="bi bi-buildings"></i>
+                            SunGrand City Hillside Reside...
+                        </div>
+                        <p class="text-main short-content">
+                            Mỗi căn biệt thự tại Casa Marina Premium đều thiết kế đẳng cấp...
+                        </p>
+                        <a href=""><b>Xem chi tiết <i class="bi bi-chevron-right" style="font-size: 12px;"></i></b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

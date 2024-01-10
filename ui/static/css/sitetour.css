@@ -1,0 +1,94 @@
+.input-search-project {
+    background: #F0F1F2;
+}
+
+.button-search-project {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 17.5px 66px;
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.location {
+
+    font-size: 12px;
+    font-weight: 400;
+    color: #A3A3A3;
+}
+
+.select-location {
+
+    font-weight: 700;
+}
+
+.img-sitetour-outstanding {
+
+    height: 352px;
+}
+
+.info-sitetour-outstanding {
+
+    padding: 30px;
+}
+
+.item-info-sitetour-outstanding {
+
+    font-size: 18px;
+}
+
+.short-content-sitetour-outstanding {
+
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.info-sitetour-outstanding {
+
+    box-shadow: 0px 0px 20px 0px #0000001A;
+
+}
+
+.see-more-sitetour-outstanding {
+
+    color: #1728CD;
+    font-size: 20px;
+}
+
+.slider-sitetour-outstanding {
+
+    margin: 0px -15px;
+}
+
+.item-sitetour-outstanding {
+
+    padding: 0 15px;
+}
+
+.title-list-sitetour {
+
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.item-info-list-sitetour {
+
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.short-content-list-sitetour {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.see-more-list-sitetour {
+
+    font-size: 16px;
+    color: #1728CD;
+}
+
+.img-list-sitetour {
+
+    height: 232px;
+}

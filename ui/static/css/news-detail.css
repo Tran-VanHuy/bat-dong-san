@@ -1,0 +1,150 @@
+.hag-tag-top button {
+
+    font-size: 12px;
+}
+
+.container-new-projects-right {
+    padding: 38px 0px 0px 38px;
+    width: 413px;
+}
+
+.container-category-news {
+    padding-bottom: 41px;
+    margin-bottom: 20px;
+}
+
+.category-news {
+    font-family: Roboto;
+    font-size: 20px;
+    color: #0D1317;
+}
+
+.item-category i {
+    color: #0058A0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.item-category span {
+    font-weight: 600;
+    color: #0D1317;
+}
+
+.item-news-see {
+    border-bottom: 1px dashed #00000066;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+.item-news-see:last-child {
+
+    border: unset;
+}
+
+.img-news-see {
+    width: 76px;
+    height: 76px;
+}
+
+.title-news-see {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.03em;
+}
+
+.email-input-new-news-project {
+    background: #F0F1F2;
+    padding: 16px 24px;
+}
+
+.button-register {
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+    padding: 16px 0px;
+}
+
+.note-contact {
+
+    min-height: 136px;
+}
+
+.create-at-news {
+
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.share-news {
+
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.button-see-all-projects {
+    text-align: center;
+    color: #000960;
+    padding: 11px 30px;
+    border: 1px solid #000960;
+    background: none;
+}
+
+.item-project {
+    box-shadow: 0px 0px 20px 0px #0000001A;
+}
+
+.open-for-sale {
+    background: #1728CD;
+}
+
+.status-sale {
+    border-radius: 10px;
+    padding: 5px 12px;
+    font-size: 12px;
+}
+
+.status-outstanding {
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.status-new {
+    background: #EC3535;
+}
+
+.title-item-project {
+    height: 52px;
+    overflow: hidden;
+}
+
+.title-icon-project {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #3B3B3D;
+}
+
+.container-price-project {
+    border-top: 1px dashed #00000066;
+}
+
+.item-price-project {
+    font-family: Roboto;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.buy-now {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.info-review {
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.short-content {
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 24px;
+}

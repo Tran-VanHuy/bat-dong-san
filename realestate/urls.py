@@ -24,6 +24,9 @@ urlpatterns = [
     path("danh-sach-du-an", ListProjectPage.as_view(), name="list-projects"),
     path("danh-sach-tin-rao", AdvertisementPage.as_view(), name="advertisement"),
     path("chi-tiet-tin-rao/<slug>", AdvertisementDetailPage.as_view(), name="advertisement-detail"),
-    path("danh-sach-tin-tuc", NewsPage.as_view(), name="news")
+    path("danh-sach-tin-tuc", NewsPage.as_view(), name="news"),
+    path("chi-tiet-tin-tuc/<slug>", NewsDetailPage.as_view(), name="news-detail"),
+    path("chi-tiet-sitetour", SitetourPage.as_view(), name="sitetour"),
+
 
 ]

@@ -41,3 +41,17 @@ class NewsPage(TemplateView):
 		context = super().get_context_data(**kwargs)
 		return context
 
+class NewsDetailPage(TemplateView):
+	template_name = "news/news-detail.html"
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		return context
+
+class SitetourPage(TemplateView):
+	template_name = "sitetour/sitetour.html"
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		return context
+

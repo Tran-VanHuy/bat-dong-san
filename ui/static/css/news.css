@@ -214,3 +214,55 @@
 
     font-size: 14px;
 }
+
+.market-news {
+
+    width: 368px;
+    height: 230px;
+}
+
+.info-market-news {
+
+    padding: 30px 90px 0px 42px;
+    box-shadow: 0px 0px 20px 0px #0000001A;
+}
+
+.title-market-news {
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    height: 42px;
+    overflow: hidden;
+}
+
+.img-general-news {
+
+    height: 230px;
+}
+
+.info-general-news {
+
+    padding: 32px 33px 28px 33px;
+}
+
+.short-content-general-news {
+
+    line-height: 26px;
+}
+
+.nav-tabs .nav-link {
+
+    border: unset !important;
+}
+
+.nav-link {
+
+    color: #3B3B3D;
+    font-weight: 700;
+}
+
+.nav-tabs .nav-link.active {
+
+    color: #FF7A00;
+}
