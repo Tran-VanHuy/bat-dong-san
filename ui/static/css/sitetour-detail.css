@@ -1,0 +1,177 @@
+.container-info {
+
+    border-bottom: 1px dashed #00000066;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.img-info-top {
+
+    width: 100%;
+    height: 356px;
+}
+
+.item-img-child {
+
+    width: 112px;
+    height: 86px;
+}
+
+.carousel {
+    display: none;
+    /* Ẩn carousel ban đầu */
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-container {
+    max-width: 738px;
+    margin: 0 auto;
+}
+
+.icon-info-right i {
+
+    color: #000960;
+}
+
+.price {
+
+    font-size: 40px;
+    font-weight: 900;
+    color: #FF7A00;
+}
+
+.button-info-right {
+    padding: 15px 0px;
+}
+
+.contact-now {
+
+    background: #FF7A00;
+}
+
+.contact-again {
+
+    background: #2AC503;
+}
+
+.container-button-info {
+    border-top: 1px dashed #00000066;
+    padding-top: 32px;
+}
+
+.container-right {
+
+    width: 410px;
+}
+
+.project-in-sitetour {
+
+    padding: 27.05px 40px 29px 40px;
+    background: #F0F1F2;
+}
+
+.title-item-project {
+
+    overflow: hidden;
+}
+
+.title-icon-project {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #3B3B3D;
+}
+
+.container-info-top {
+
+    border-top: 1px dashed #00000066;
+}
+
+.container-price-project {
+    border-top: 1px dashed #00000066;
+}
+
+.item-price-project {
+    font-family: Roboto;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.buy-now {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+}
+
+.nationwide-projects-outstanding {
+
+    padding: 27.05px 40px 29px 40px;
+    background: #F0F1F2;
+}
+
+.container-review {
+    border-bottom: 1px dashed #00000066;
+}
+
+.container-content-sitetour {
+
+    border-bottom: 1px dashed #00000066;
+    padding-bottom: 54px;
+    margin-bottom: 44px;
+}
+
+.similar-sitetour {
+
+    width: 305px;
+    height: 186px;
+}
+
+.location-sitetour {
+
+    font-size: 14px;
+}
+
+.title-sitetour-similar {
+
+    font-size: 18px;
+    line-height: 21.09px;
+}
+
+.short-content-similar {
+
+    font-size: 14px;
+
+}
+
+.container-center-sitetour-similar {
+
+    gap: 15px;
+    padding: 15px 0px;
+}
+
+.see-more {
+
+    color: #1728CD;
+}
+
+.button-see-all-projects {
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: center;
+    color: #000960;
+    padding: 11px 30px;
+    border: 1px solid #000960;
+    background: none;
+}

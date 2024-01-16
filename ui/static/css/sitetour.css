@@ -92,3 +92,43 @@
 
     height: 232px;
 }
+
+.number-site-tour b {
+
+
+    color: #FF7A00;
+
+}
+
+..nav-tabs .nav-link {
+
+    border: none !important;
+    background-color: none !important;
+    color: #3B3B3D !important;
+    font-weight: 700 !important;
+
+}
+
+.nav-tabs .nav-link:hover {
+
+    border-color: unset !important;
+    border: none !important;
+}
+
+.nav-tabs .nav-link.active {
+
+    border: none !important;
+    background-color: none !important;
+    color: #FF7A00 !important;
+    font-weight: 700 !important;
+}
+
+.slider {
+
+    margin: 0px -15px;
+}
+
+.item-slider {
+
+    padding: 0 15px;
+}

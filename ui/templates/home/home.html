@@ -57,36 +57,18 @@
 <div class="container-content">
     <!--  -->
     <div class="row gap-3">
+        {% for item in introduces %}
         <div class="col item-introduce">
             <div class="mb-3 text-center">
-                <img src="{% static 'images/buildings.svg' %}" />
+                {{ item.svg|safe }}
             </div>
             <div class="content-introduce">
-                <h2 class="text-center">Dự án</h2>
-                <p class="text-center info-introduce">Hơn 500 dự án trên toàn quốc</p>
-                <p class="short-content-introduce text-center">Bảng hàng trực tuyến của hơn 445 dự án duy nhất chỉ có trên Wesale</p>
+                <h2 class="text-center">{{ item.title }}</h2>
+                <p class="text-center info-introduce">{{ item.short_content }}</p>
+                <p class="short-content-introduce text-center">{{ item.content }}</p>
             </div>
         </div>
-        <div class="col item-introduce">
-            <div class="mb-3 text-center">
-                <img src="{% static 'images/buildings.svg' %}" />
-            </div>
-            <div class="content-introduce">
-                <h2 class="text-center">Dự án</h2>
-                <p class="text-center info-introduce">Hơn 500 dự án trên toàn quốc</p>
-                <p class="short-content-introduce text-center ">Bảng hàng trực tuyến của hơn 445 dự án duy nhất chỉ có trên Wesale</p>
-            </div>
-        </div>
-        <div class="col item-introduce">
-            <div class="mb-3 text-center">
-                <img src="{% static 'images/buildings.svg' %}" />
-            </div>
-            <div class="content-introduce">
-                <h2 class="text-center">Dự án</h2>
-                <p class="text-center info-introduce">Hơn 500 dự án trên toàn quốc</p>
-                <p class="short-content-introduce text-center">Bảng hàng trực tuyến của hơn 445 dự án duy nhất chỉ có trên Wesale</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <!--  -->
     <div class="container-project-outstanding">
@@ -292,15 +274,17 @@
     <!--  -->
     <div class="container-img-banenr-content">
         <swiper-container class="mySwiper" navigation="true" pagination="true" keyboard="true" mousewheel="true" css-mode="true">
+            {% for item in advertisements %}
             <swiper-slide>
+                <img src="{{ item.image }}" class="img-banner-content">
+            </swiper-slide>
+            {% endfor %}
+           <!--  <swiper-slide>
                 <img src="{% static 'images/Rectangle 2435.png' %}" class="img-banner-content">
             </swiper-slide>
             <swiper-slide>
                 <img src="{% static 'images/Rectangle 2435.png' %}" class="img-banner-content">
-            </swiper-slide>
-            <swiper-slide>
-                <img src="{% static 'images/Rectangle 2435.png' %}" class="img-banner-content">
-            </swiper-slide>
+            </swiper-slide> -->
         </swiper-container>
     </div>
     <!--  -->
@@ -528,7 +512,17 @@
     <div class="container-member">
         <h1 class="text-main text-center mb-4">Thành viên nổi bật</h1>
         <div class="d-flex justify-content-center gap-4">
+            {% for item in members %}
             <div>
+                <div class="rounded-circle avatar-member">
+                    <img src="{{ item.avatar }}" class="w-100 h-100" />
+                </div>
+                <div class="text-center">
+                    <b class="name-member text-main">{{ item.name }}</b>
+                </div>
+            </div>
+            {% endfor %}
+            <!--   <div>
                 <div class="rounded-circle avatar-member">
                     <img src="{% static 'images/Rectangle 2454.png' %}" class="w-100 h-100" />
                 </div>
@@ -543,31 +537,25 @@
                 <div class="text-center">
                     <b class="name-member text-main">Trần Minh</b>
                 </div>
-            </div>
-            <div>
-                <div class="rounded-circle avatar-member">
-                    <img src="{% static 'images/Rectangle 2454.png' %}" class="w-100 h-100" />
-                </div>
-                <div class="text-center">
-                    <b class="name-member text-main">Trần Minh</b>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Thế mạnh của... -->
     <div class="conatiner-strengths">
         <h1 class="text-main text-center mb-4"> Thế mạnh của Wesale</h1>
         <div class="row gap-3">
+            {% for item in strengths %}
             <div class="col item-introduce">
                 <div class="mb-3 text-center">
-                    <img src="{% static 'images/buildings.svg' %}" />
+                    {{ item.svg|safe }}
                 </div>
                 <div class="content-introduce">
-                    <p class="text-center info-introduce title-strengths">Chia sẻ doanh thu “ ăn chắc dòng tiền”</p>
-                    <p class="short-content-introduce text-center">trong 15 năm, cam kết mua lại +8%, tặng ngay 15 đêm nghỉ dưỡng miễn phí/năm, do vậy đầu tư Casa Marina Quy Nhơn chắc chắn là lựa chọn hoàn hảo, sinh lời hấp dẫn nhất</p>
+                    <p class="text-center info-introduce title-strengths">{{ item.title }}</p>
+                    <p class="short-content-introduce text-center">{{ item.content }}</p>
                 </div>
             </div>
-            <div class="col item-introduce">
+            {% endfor %}
+            <!--  <div class="col item-introduce">
                 <div class="mb-3 text-center">
                     <img src="{% static 'images/buildings.svg' %}" />
                 </div>
@@ -575,8 +563,8 @@
                     <p class="text-center info-introduce title-strengths">Thiết kế đẳng cấp, tiện ích và dịch vụ đỉnh cao</p>
                     <p class="short-content-introduce text-center ">Mỗi căn biệt thự tại Casa Marina Premium đều thiết kế đẳng cấp, đạt giải “Biệt thự nghỉ dưỡng và Khu phức hợp du lịch tốt nhất năm 2020”. Dự án còn sở hữu tiện ích 5* đỉnh cao, không gian xanh trong lành, thoáng mát</p>
                 </div>
-            </div>
-            <div class="col item-introduce">
+            </div> -->
+            <!--  <div class="col item-introduce">
                 <div class="mb-3 text-center">
                     <img src="{% static 'images/buildings.svg' %}" />
                 </div>
@@ -584,7 +572,7 @@
                     <p class="text-center info-introduce title-strengths">Được đầu tư, phát triển bởi đơn vị hàng đầu</p>
                     <p class="short-content-introduce text-center">Casa Marina Quy Nhơn chia sẻ doanh thu 40/60 trong 15 năm, cam kết mua lại +8%, tặng ngay 15 đêm nghỉ dưỡng miễn phí/năm, do vậy đầu tư Casa Marina Quy Nhơn chắc chắn là lựa chọn hoàn hảo, sinh lời hấp dẫn nhất</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Đối tác thân thiết -->

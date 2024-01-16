@@ -5,12 +5,18 @@ from django.shortcuts import render
 from .models import *
 from django.template import loader
 from django.http import HttpResponse
+from .models import *
 
 class HomePage(TemplateView):
 	template_name = "home/home.html"
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
+
+		context['introduces'] = Introduce.objects.filter(question_type='0')
+		context['strengths'] =  Introduce.objects.filter(question_type='1')
+		context['members'] = Member.objects.all()
+		context['advertisements'] = Advertisement.objects.all()
 		return context;
 
 class ListProjectPage(TemplateView):
@@ -54,4 +60,12 @@ class SitetourPage(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
 		return context
+
+class SitetourDetailPage(TemplateView):
+	template_name = "sitetour/sitetour-detail.html"
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		return context
+		
 
