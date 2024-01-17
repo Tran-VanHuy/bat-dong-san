@@ -19,7 +19,7 @@ $(document).ready(function() {
     myCarousel.each(function() {
         $(this).slick({
             dots: false,
-            slidesToShow: 6,
+            slidesToShow: lengthPartner >= 6 ? 6 : lengthPartner,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 7 * 1000,
