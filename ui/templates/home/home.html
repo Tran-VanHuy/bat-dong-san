@@ -13,15 +13,17 @@ lengthPartner = { { partners | length } }
 <!-- Banner -->
 <div class="position-relative">
     <swiper-container class="mySwiper" navigation="true">
+        {% for item in banners %}
         <swiper-slide>
+            <img src="{{ item.image }}">
+        </swiper-slide>
+        {% endfor %}
+        <!-- <swiper-slide>
             <img src="{% static 'images/rectangle1.png' %}">
         </swiper-slide>
         <swiper-slide>
             <img src="{% static 'images/rectangle1.png' %}">
-        </swiper-slide>
-        <swiper-slide>
-            <img src="{% static 'images/rectangle1.png' %}">
-        </swiper-slide>
+        </swiper-slide> -->
     </swiper-container>
     <div class="position-absolute bottom-0 w-100 z-1 d-flex justify-content-center">
         <div class="container-content-banner">
@@ -94,24 +96,26 @@ lengthPartner = { { partners | length } }
             </div>
             <div class="flex-fill pt-4 pe-4">
                 <div class="d-flex gap-2 mb-3">
-                    <div class="open-for-sale status-sale text-white text-center">Đang mở bán</div>
-                    <div class="status-outstanding status-sale text-white text-center">Nổi bật</div>
-                    <div class="status-new status-sale text-white text-center">Mới</div>
+                    {% for item in project_main.type_project.all %}
+                    <div class="{% if item|lower == 'đang mở bán' %} open-for-sale {% endif %} {% if item|lower == 'nổi bật' %} status-outstanding {% endif %} 
+                    {% if item|lower == 'mới' %} status-new {% endif %} status-sale text-white text-center">{{item}}</div>
+                    {% endfor %}
+                    <!-- <div class=" status-sale text-white text-center">Nổi bật</div>
+                    <div class=" status-sale text-white text-center">Mới</div> -->
                 </div>
                 <h2 class="pb-2">
                     {{ project_main.title }}
                 </h2>
                 <div class="row mb-3">
-                    {% for item in project_main.info_project %}
-                    1
+                    {% for item in project_main.project_results.all %}
                     <div class="d-flex col-6 gap-2 align-items-center py-1">
-                        {{ item.svg }}
+                        {{ item.svg|safe }}
                         <span class="title-icon-project">{{ item.name }}</span>
                     </div>
                     {% endfor %}
                 </div>
                 <div class="d-flex container-price-project py-3">
-                    <span class="price-project text-main me-5">{{ item.price }}</span>
+                    <span class="price-project text-main me-5">{{ project_main.price }}</span>
                     <button class="flex-fill buy-now rounded-pill text-white border-0">Mua ngay</button>
                 </div>
             </div>
@@ -163,14 +167,16 @@ lengthPartner = { { partners | length } }
             {% endif %}
         </div>
         <div class="row mb-4">
+            {% for item in project_outstanding %}
             <div class="col-4">
-                <div class="item-project">
-                    <div class="position-relative">
-                        <img src="{% static 'images/Rectangle 22.png' %}" class="w-100">
+                <div class="item-project d-flex flex-column h-100 rounded overflow-hidden">
+                    <div class="position-relative ">
+                        <img src="{{ item.image }}" class="w-100">
                         <div class="position-absolute top-0 d-flex gap-2 mb-3 p-2">
-                            <div class="open-for-sale status-sale text-white text-center">Đang mở bán</div>
-                            <div class="status-outstanding status-sale text-white text-center">Nổi bật</div>
-                            <div class="status-new status-sale text-white text-center">Mới</div>
+                            {% for item in project_main.type_project.all %}
+                            <div class="{% if item|lower == 'đang mở bán' %} open-for-sale {% endif %} {% if item|lower == 'nổi bật' %} status-outstanding {% endif %} 
+                    {% if item|lower == 'mới' %} status-new {% endif %} status-sale text-white text-center">{{item}}</div>
+                            {% endfor %}
                         </div>
                         <div class="position-absolute top-0 end-0 p-3">
                             <div class="product-favourite d-flex align-items-center justify-content-center">
@@ -178,16 +184,19 @@ lengthPartner = { { partners | length } }
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
-                        <h3 class="title-item-project">Vega City Nha Trang</h3>
-                        <div class="row mb-3">
-                            <div class="d-flex col-6 gap-2 align-items-center py-1">
-                                <div>
-                                    <i class="bi bi-geo-alt icon-project"></i>
+                    <div class="flex-fill p-3 d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="title-item-project">{{ item.title }}</h3>
+                            <div class="row mb-3">
+                                {% for item in project_outstanding.project_results.all %}
+                                <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                    <div>
+                                        {{ item.svg|safe }}
+                                    </div>
+                                    <span class="title-icon-project">{{ item.name }}</span>
                                 </div>
-                                <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
-                            </div>
-                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                {% endfor %}
+                                <!--    <div class="d-flex col-6 gap-2 align-items-center py-1">
                                 <div><i class="bi bi-geo-alt icon-project"></i></div>
                                 <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
                             </div>
@@ -202,6 +211,7 @@ lengthPartner = { { partners | length } }
                             <div class="d-flex col-6 gap-2 align-items-center py-1">
                                 <div><i class="bi bi-geo-alt icon-project"></i></div>
                                 <span class="title-icon-project">Nha Trang - Khánh Hoà</span>
+                            </div> -->
                             </div>
                         </div>
                         <div class="d-flex container-price-project pt-3">
@@ -211,7 +221,8 @@ lengthPartner = { { partners | length } }
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            {% endfor %}
+            <!--  <div class="col-4">
                 <div class="item-project">
                     <div class="position-relative">
                         <img src="{% static 'images/Rectangle 22.png' %}" class="w-100">
@@ -256,8 +267,8 @@ lengthPartner = { { partners | length } }
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-4">
+            </div> -->
+            <!--   <div class="col-4">
                 <div class="item-project">
                     <div class="position-relative">
                         <img src="{% static 'images/Rectangle 22.png' %}" class="w-100">
@@ -302,7 +313,7 @@ lengthPartner = { { partners | length } }
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="text-center">
             <button class="rounded-pill text-white border-0 see-all-project-outstanding">Xem tất cả dự án <i class="bi bi-chevron-right"></i></button>
@@ -485,13 +496,44 @@ lengthPartner = { { partners | length } }
     <div class="container-review">
         <h1 class="text-main text-center mb-3">Review dự án</h1>
         <div class="row">
+            {% if reviews|length > 0 %}
+            {% for item in reviews %}
             <div class="col-6 d-flex">
-                <div class="me-3">
+                <div class="me-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <img src="{{ item.image }}" class="img-review">
+                </div>
+                <div class="flex-fill d-flex flex-column justify-content-between">
+                    <div class="content-review-left">
+                        <p class="title-review" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{{ item.title }}</p>
+                        <div>
+                            {% for item in item.review_results.all %}
+                            <div class="d-flex mb-2 gap-2">
+                                {{ item.svg|safe }}
+                                <span class="name-info-review text-truncate text-main">{{ item.name }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 pb-2">
+                        <div class="rounded-circle avatar-review">
+                            <img src="{% static 'images/Rectangle 2469.png'%}" class="w-100 h-100">
+                        </div>
+                        <div>
+                            <p class="mb-0 name-avatar text-main">Anh Trần Hải Minh</p>
+                            <span class="name-position text-main">Wesaler</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-6 d-flex">
+                <div class="me-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <img src="{% static 'images/Rectangle 2468.png'%}" class="img-review">
                 </div>
                 <div class="flex-fill">
                     <div class="content-review-left mb-4">
-                        <p class="title-review">Review Shophouse của Sun Grand City Hillside Residence</p>
+                        <p class="title-review" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Review Shophouse của Sun Grand City Hillside Residence</p>
                         <div>
                             <div class="d-flex mb-2 gap-2">
                                 <i class="bi bi-building"></i>
@@ -515,12 +557,12 @@ lengthPartner = { { partners | length } }
                 </div>
             </div>
             <div class="col-6 d-flex">
-                <div class="me-3">
+                <div class="me-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <img src="{% static 'images/Rectangle 2468.png'%}" class="img-review">
                 </div>
                 <div class="flex-fill">
                     <div class="content-review-left mb-4">
-                        <p class="title-review">Review Shophouse của Sun Grand City Hillside Residence</p>
+                        <p class="title-review" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Review Shophouse của Sun Grand City Hillside Residence</p>
                         <div>
                             <div class="d-flex mb-2 gap-2">
                                 <i class="bi bi-building"></i>
@@ -543,6 +585,7 @@ lengthPartner = { { partners | length } }
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
     <!-- Thành viên nổi <p>b</p>ật -->
@@ -680,6 +723,20 @@ lengthPartner = { { partners | length } }
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
         </div>
     </div>
 </div>

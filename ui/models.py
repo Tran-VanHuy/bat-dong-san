@@ -81,10 +81,41 @@ class Project(models.Model):
 	def __str__(self):
 		return str(self.title)
 
+class Review(models.Model):
+	image = models.FileField(upload_to="static/images", unique=True)
+	video = models.FileField(upload_to="static/images", unique=True)
+	title = models.CharField(max_length=255)
+	status = models.BooleanField()
+
+	def __str__(self):
+		return str(self.title)
+
+class InfoReview(models.Model):
+	svg = models.TextField()
+	name = models.CharField(max_length=100)
+	review = models.ForeignKey(Review, on_delete=models.CASCADE, null=True, blank=True, related_name='review_results')
+
 class InfoProject(models.Model):
 	svg = models.TextField()
 	name = models.CharField(max_length=100)
-	project = models.ForeignKey(Project, on_delete=models.CASCADE, null=True, blank=True)
+	project = models.ForeignKey(Project, on_delete=models.CASCADE, null=True, blank=True, related_name='project_results')
+
+class Page(models.Model):
+	name = models.CharField(max_length=50, unique=True)
+	link = models.CharField(max_length=255, null=True, blank=True)
+
+	def __str__(self):
+		return str(self.name)
+
+class Banner(models.Model):
+	image = models.FileField(upload_to="static/images", unique=True)
+	page = models.ManyToManyField(Page)
+
+	def __str__(self):
+		return mark_safe(f'<img src="{self.image.url}" style="width: 200px; height: 100px; object-fit: cover;" />')
+
+
+
 
 
 
