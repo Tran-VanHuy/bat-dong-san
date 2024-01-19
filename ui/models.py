@@ -114,6 +114,24 @@ class Banner(models.Model):
 	def __str__(self):
 		return mark_safe(f'<img src="{self.image.url}" style="width: 200px; height: 100px; object-fit: cover;" />')
 
+class Sitetour(models.Model):
+	image = models.FileField(upload_to="static/images")
+	title = models.CharField(max_length=255)
+	short_content = models.CharField(max_length=255)
+	content = models.TextField()
+	price = models.CharField(max_length=100)
+	status = models.BooleanField()
+
+	def __str__(self):
+		return str(self.title)
+
+class InfoSitetour(models.Model):
+	svg = models.TextField()
+	name = models.CharField(max_length=100)
+	sitetour = models.ForeignKey(Sitetour, on_delete=models.CASCADE, null=True, blank=True, related_name='sitetour_results')
+
+
+
 
 
 

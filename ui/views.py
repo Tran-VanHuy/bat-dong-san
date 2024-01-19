@@ -49,6 +49,7 @@ class HomePage(TemplateView):
 		context['reviews'] = Review.objects.prefetch_related(
 			Prefetch('review_results', queryset=InfoReview.objects.all())
 			).filter(status=True)
+		context['sitetours'] = Sitetour.objects.prefetch_related(Prefetch('sitetour_results', queryset=InfoSitetour.objects.all())).filter(status=True)
 		return context
 
 

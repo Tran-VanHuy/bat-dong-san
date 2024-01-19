@@ -29,6 +29,15 @@ class InfoReviewInline(admin.StackedInline):
 class ReviewAdmin(admin.ModelAdmin):
     inlines = [InfoReviewInline]
 
+# Sitetour
+class InfoSitetourInline(admin.StackedInline):
+    model = InfoSitetour
+    extra = 1
+    
+
+class SitetourAdmin(admin.ModelAdmin):
+    inlines = [InfoSitetourInline]
+
 admin.site.register(Introduce)
 admin.site.register(Member)
 admin.site.register(Advertisement)
@@ -40,6 +49,8 @@ admin.site.register(CategoryProject)
 admin.site.register(Page)
 admin.site.register(Banner)
 admin.site.register(Review, ReviewAdmin)
+admin.site.register(Sitetour, SitetourAdmin)
+
 
 
 

@@ -7,7 +7,33 @@
     <div class="row mx-auto my-auto justify-content-between">
         <div id="recipeCarousel" class="carousel slide px-0" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
+                {% for item in sitetours %}
+                <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                    <div class="col-md-3">
+                        <div class="item-site-tour">
+                            <div>
+                                <img src="{{ item.image }}">
+                            </div>
+                            <div class="py-3">
+                                <a href="#"><h3 class="text-main">{{ item.title }}</h3></a>
+                                {% for item in item.sitetour_results.all %}
+                                {% if forloop.counter0 == 0 %}
+                                <div class="mb-2 d-flex align-items-center gap-2">
+                                    {{ item.svg|safe }}
+                                    <span class="text-main company-sitetour">{{ item.name }}</span>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                <p class="text-main short-content-sitetour mb-2">{{ item.short_content }}</p>
+                                <div class="">
+                                    <b><a href="#">Xem chi tiết</a></b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!--   <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="item-site-tour">
                             <div>
@@ -26,8 +52,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
+                </div> -->
+                <!-- <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="item-site-tour">
                             <div>
@@ -46,8 +72,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
+                </div> -->
+                <!--   <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="item-site-tour">
                             <div>
@@ -66,8 +92,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
+                </div> -->
+                <!--   <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="item-site-tour">
                             <div>
@@ -86,8 +112,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
+                </div> -->
+                <!-- <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="item-site-tour">
                             <div>
@@ -106,27 +132,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="item-site-tour">
-                            <div>
-                                <img src="{% static 'images/Rectangle 2489.png' %}">
-                            </div>
-                            <div class="py-3">
-                                <h3>Trải nghiệm sống 1 ngày tại Sun Grand City</h3>
-                                <div class="mb-2">
-                                    <i class="bi bi-building"></i>
-                                    <span class="text-main company-sitetour">Sun Grand City Hillside Residence</span>
-                                </div>
-                                <p class="text-main short-content-sitetour mb-2">Mỗi căn biệt thự tại Casa Marina Premium đều thiết kế đẳng cấp...</p>
-                                <div class="">
-                                    <b><a href="#">Xem chi tiết</a></b>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
             <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
