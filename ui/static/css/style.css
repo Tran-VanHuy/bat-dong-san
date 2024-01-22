@@ -144,3 +144,13 @@ h3 {
     font-family: Roboto;
     font-size: 14px;
 }
+
+.about_to_open_for_sale {
+
+    background: #000960;
+}
+
+.pagination li {
+
+    padding: 10px;
+}

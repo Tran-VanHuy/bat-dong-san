@@ -15,7 +15,9 @@
                                 <img src="{{ item.image }}">
                             </div>
                             <div class="py-3">
-                                <a href="#"><h3 class="text-main">{{ item.title }}</h3></a>
+                                <a href="#">
+                                    <h3 class="text-main">{{ item.title }}</h3>
+                                </a>
                                 {% for item in item.sitetour_results.all %}
                                 {% if forloop.counter0 == 0 %}
                                 <div class="mb-2 d-flex align-items-center gap-2">

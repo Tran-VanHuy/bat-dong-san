@@ -14,7 +14,8 @@ from django.forms.models import model_to_dict
 from rest_framework.decorators import api_view
 from django.http import JsonResponse
 from django.db.models import F, OuterRef, Prefetch
-    
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 class HomePage(TemplateView):
 	template_name = "home/home.html"
@@ -41,7 +42,7 @@ class HomePage(TemplateView):
 		Prefetch(
 			'project_results',
 			queryset=(
-				InfoProject.objects.filter(project=5)
+				InfoProject.objects.filter()
 				)
 			)
 		).exclude(id=context['project_main'].id).filter(status=True).order_by("-id")
@@ -50,6 +51,7 @@ class HomePage(TemplateView):
 			Prefetch('review_results', queryset=InfoReview.objects.all())
 			).filter(status=True)
 		context['sitetours'] = Sitetour.objects.prefetch_related(Prefetch('sitetour_results', queryset=InfoSitetour.objects.all())).filter(status=True)
+		context['sell_projects'] = Project.objects.prefetch_related(Prefetch('project_results', queryset=InfoProject.objects.all())).filter(project_sell="1", status=True)[0:4]
 		return context
 
 
@@ -68,7 +70,29 @@ class ListProjectPage(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		return context;
+		projects = Project.objects.prefetch_related(Prefetch("project_results", queryset=InfoProject.objects.all())).filter(status=True, project_sell="0")
+		context['project_main'] = Project.objects.prefetch_related(
+			Prefetch(
+				'project_results',
+				queryset=(
+					InfoProject.objects.all()
+					)
+				)
+		).filter(status=True, project_sell="2").order_by("-id")
+		
+		context['count_projects'] = Project.objects.filter(status=True, project_sell="0").count()
+		paginator = Paginator(projects, 8)
+		page = self.request.GET.get('page', 1)
+		projects = paginator.page(page)
+		
+		
+		
+		context['reviews'] = Review.objects.prefetch_related(
+			Prefetch('review_results', queryset=InfoReview.objects.all())
+			).filter(status=True)
+		context['sitetours'] = Sitetour.objects.prefetch_related(Prefetch('sitetour_results', queryset=InfoSitetour.objects.all())).filter(status=True).first()
+		context['projects'] = projects
+		return context
 
 class AdvertisementPage(TemplateView):
 	template_name = "advertisement/advertisement.html"
@@ -103,6 +127,15 @@ class SitetourPage(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
+
+		context['sitetour_outstanding'] = Sitetour.objects.prefetch_related(Prefetch('sitetour_results', queryset=InfoSitetour.objects.all())).filter(category_sitetour="0", status=True)
+		sitetours = Sitetour.objects.prefetch_related(Prefetch('sitetour_results', queryset=InfoSitetour.objects.all())).exclude(category_sitetour="0", status=False)
+		
+		paginator = Paginator(sitetours, 6)
+		page = self.request.GET.get('page', 1)
+		sitetours = paginator.page(page)
+
+		context['sitetours'] = sitetours
 		return context
 
 class SitetourDetailPage(TemplateView):

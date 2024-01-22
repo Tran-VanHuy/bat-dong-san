@@ -126,6 +126,47 @@
     <div class="list-projects-outstanding">
         <h1 class="text-main">Dự án nổi bật</h1>
         <div class="container-item-projects-outstanding">
+            {% if project_main|length > 0 %}
+            {% for item in project_main %}
+            <div class="d-flex mb-3 gap-5 container-project-outstanding-top">
+                <div class="position-relative">
+                    <img src="{{item.image}}" class="h-100">
+                    <div class="position-absolute top-0 end-0 p-3">
+                        <div class="product-favourite d-flex align-items-center justify-content-center">
+                            <i class="bi bi-heart-fill text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-fill pt-4 pe-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex gap-2 mb-3">
+                            {% for item in item.type_project.all %}
+                            <div class="{% if item|lower == 'đang mở bán' %} open-for-sale {% endif %} {% if item|lower == 'nổi bật' %} status-outstanding {% endif %} 
+                    {% if item|lower == 'mới' %} status-new {% endif %} {% if item|lower == 'sắp mở bán' %} about_to_open_for_sale {% endif %} status-sale text-white text-center">{{item}}</div>
+                            {% endfor %}
+                        </div>
+                        <a href="#">
+                            <h2 class="pb-2 text-main">
+                                {{ item.title }}
+                            </h2>
+                        </a>
+                        <div class="row mb-3">
+                            {% for item in item.project_results.all %}
+                            <div class="d-flex col-6 gap-2 align-items-center py-1">
+                                {{item.svg|safe}}
+                                <span class="title-icon-project">{{ item.name }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="d-flex container-price-project py-3">
+                        <span class="price-project text-main me-5">{{item.price}}</span>
+                        <button class="flex-fill buy-now rounded-pill text-white border-0">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+            {% else %}
             <div class="d-flex mb-3 gap-5 container-project-outstanding-top">
                 <div class="position-relative">
                     <img src="/static/images/Rectangle%205.png" class="h-100">
@@ -218,6 +259,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
     {# Dự án toàn quốc #}
@@ -227,7 +269,7 @@
                 <h1 class="text-main">Dự án toàn quốc</h1>
                 <div class="d-flex gap-4">
                     <div class="count-projects">
-                        Số dự án: <span>342 dự án</span>
+                        Số dự án: <span>{{ count_projects }}</span>
                     </div>
                     <div class="sort-projects">
                         Sắp xếp: <select class="border-0">
@@ -237,6 +279,47 @@
                 </div>
             </div>
             <div class="row mb-2">
+                {% if projects|length > 0 %}
+                {% for item in projects %}
+                <div class="col-6 my-2">
+                    <div class="item-project rounded h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="{{ item.image }}" class="w-100">
+                            <div class="position-absolute top-0 d-flex gap-2 mb-3 p-2">
+                                {% for item in item.type_project.all %}
+                                <div class="{% if item|lower == 'đang mở bán' %} open-for-sale {% endif %} {% if item|lower == 'nổi bật' %} status-outstanding {% endif %} 
+                    {% if item|lower == 'mới' %} status-new {% endif %} {% if item|lower == 'sắp mở bán' %} about_to_open_for_sale {% endif %} status-sale text-white text-center">{{item}}</div>
+                                {% endfor %}
+                            </div>
+                            <div class="position-absolute top-0 end-0 p-3">
+                                <div class="product-favourite d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-heart-fill text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-fill p-3 d-flex flex-column justify-content-between">
+                            <div>
+                                <a href="#">
+                                    <h3 class="title-item-project text-main" title="{{ item.title }}" style="height: 43.19px; overflow: hidden;">{{ item.title }}</h3>
+                                </a>
+                                <div class="d-flex flex-wrap mb-3 gap-2" style="margin-left: -0.25rem;">
+                                    {% for item in item.project_results.all %}
+                                    <div class="py-1 px-1">
+                                        {{ item.svg|safe }}
+                                        <span class="title-icon-project">{{ item.name }}</span>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="d-flex container-price-project pt-3">
+                                <span class="item-price-project text-main me-5">1.2 - 3.2 tỷ</span>
+                                <button class="flex-fill buy-now rounded-pill text-white border-0">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
                 <div class="col-6 my-2">
                     <div class="item-project rounded">
                         <div class="position-relative">
@@ -381,24 +464,29 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
             </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link text-main" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link text-main" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link text-main" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link text-main" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link text-main" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            {% if projects.has_other_pages %}
+            <ul class="pagination">
+                {% if projects.has_previous %}
+                <li><a href="?page={{ projects.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in projects.paginator.page_range %}
+                {% if users.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if projects.has_next %}
+                <li><a href="?page={{ projects.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
         </div>
         <div>
             <div class="nationwide-right rounded mb-4">
@@ -508,6 +596,22 @@
                     <a href="#"><b>Xem thêm <i class="bi bi-chevron-right" style="font-size: 12px;"></i></b></a>
                 </div>
                 <div class="slider-reviews">
+                    {% if reviews|length > 0 %}
+                    {% for item in reviews %}
+                    <div>
+                        <img src="{{ item.image }}" class="mb-3 w-100" style="max-height: 192px;">
+                        <h3 class="text-main mb-3">{{ item.title }}</h3>
+                        <div class="d-flex flex-column gap-2">
+                            {% for item in item.review_results.all %}
+                            <div class="info-review text-main">
+                                {{ item.svg|safe }}
+                                {{ item.name }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
                     <div>
                         <img src="{% static 'images/Rectangle 2471.png' %}" class="mb-3 w-100">
                         <h3 class="text-main mb-3">Review Shophouse của Sun Grand City Hillside Residence</h3>
@@ -536,12 +640,33 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
+            {% if sitetours %}
             <div class="nationwide-projects-outstanding rounded">
                 <div class="d-flex justify-content-between container-review pb-3 mb-3">
-                    <b>Review dự án</b>
-                    <a href="#"><b>Xem thêm <i class="bi bi-chevron-right" style="font-size: 12px;"></i></b></a>
+                    <b>Sitetour nổi bật</b>
+                    <a href="{% url 'sitetour' %}"><b>Xem thêm <i class="bi bi-chevron-right" style="font-size: 12px;"></i></b></a>
+                </div>
+                <div>
+                    <img src="{{ sitetours.image }}" class="w-100 mb-3">
+                    <h3 class="text-main mb-3">{{ sitetours.title }}</h3>
+                    <div class="info-review text-main mb-3">
+                        <i class="bi bi-buildings"></i>
+                        SunGrand City Hillside Reside...
+                    </div>
+                    <p class="text-main short-content">
+                        {{ sitetours.short_content }}
+                    </p>
+                    <a href=""><b>Xem thêm <i class="bi bi-chevron-right" style="font-size: 12px;"></i></b></a>
+                </div>
+            </div>
+            {% else %}
+            <div class="nationwide-projects-outstanding rounded">
+                <div class="d-flex justify-content-between container-review pb-3 mb-3">
+                    <b>Sitetour nổi bật</b>
+                    <a href="{% url 'sitetour' %}"><b>Xem thêm <i class="bi bi-chevron-right" style="font-size: 12px;"></i></b></a>
                 </div>
                 <div>
                     <img src="{% static 'images/Rectangle 2495.png' %}" class="w-100 mb-3">
@@ -556,6 +681,7 @@
                     <a href=""><b>Xem thêm <i class="bi bi-chevron-right" style="font-size: 12px;"></i></b></a>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
     {# Tin tức dự án #}

@@ -69,6 +69,11 @@ class CategoryProject(models.Model):
 	
 class Project(models.Model):
 	
+	CHOICE_PROJECTS = {
+	"0" : "Dự án toàn quốc",
+	"1" : "Bất động sản bán lẻ",
+	"2" : "Dự án nổi bật"
+	}
 	image = models.FileField(upload_to="static/images", unique=True)
 	type_project = models.ManyToManyField(TypeProject)
 	category = models.ManyToManyField(CategoryProject)
@@ -77,6 +82,13 @@ class Project(models.Model):
 	content = models.TextField()
 	price = models.CharField(max_length=100)
 	status = models.BooleanField()
+	project_sell = models.CharField(
+		max_length=2,
+		choices=CHOICE_PROJECTS,
+		default="0",
+		null=True,
+		blank=True	
+		)
 
 	def __str__(self):
 		return str(self.title)
@@ -115,12 +127,21 @@ class Banner(models.Model):
 		return mark_safe(f'<img src="{self.image.url}" style="width: 200px; height: 100px; object-fit: cover;" />')
 
 class Sitetour(models.Model):
+	CHOICE_SITETOUR = {
+	"0": "Nổi bật"
+	}
 	image = models.FileField(upload_to="static/images")
 	title = models.CharField(max_length=255)
 	short_content = models.CharField(max_length=255)
 	content = models.TextField()
 	price = models.CharField(max_length=100)
 	status = models.BooleanField()
+	category_sitetour = models.CharField(
+		max_length=1,
+		choices=CHOICE_SITETOUR,
+		null=True,
+		blank=True
+		)
 
 	def __str__(self):
 		return str(self.title)
