@@ -24,32 +24,22 @@
         <div class="flex-fill d-flex flex-column justify-content-between">
             <div>
                 <h2 class="title-advertisement-detail text-main mb-3">
-                    Mặt phố Tam Khương, Đống Đa, kinh doanh, lô góc, vỉa hè rộng, 5 tầng.
+                    {{ advertisement_detail.title }}
                 </h2>
-                <div class="text-main icon-info-right mb-2">
+                <!-- <div class="text-main icon-info-right mb-2">
                     <i class="bi bi-geo-alt me-1"></i>
                     Phường Khương Thượng, Đống Đa, Hà Nội
-                </div>
+                </div> -->
                 <p class="price">
-                    1.2 - 3.2 tỷ
+                    {{ advertisement_detail.price }}
                 </p>
                 <div class="row">
-                    <div class="col-6 text-main icon-info-right mb-2">
-                        <i class="bi bi-building me-1"></i>
-                        2 phòng ngủ
+                    {% for item in advertisement_detail.advertisement_results.all %}
+                    <div class="d-flex gap-2 col-6 text-main icon-info-right mb-2">
+                        {{ item.svg|safe }}
+                        {{ item.name }}
                     </div>
-                    <div class="col-6 text-main icon-info-right mb-2">
-                        <i class="bi bi-building me-1"></i>
-                        2 phòng ngủ
-                    </div>
-                    <div class="col-6 text-main icon-info-right mb-2">
-                        <i class="bi bi-building me-1"></i>
-                        2 phòng ngủ
-                    </div>
-                    <div class="col-6 text-main icon-info-right mb-2">
-                        <i class="bi bi-building me-1"></i>
-                        2 phòng ngủ
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="container-button-info">
@@ -69,7 +59,7 @@
     <div class="d-flex gap-3 container-content-detail">
         <div class="flex-fill">
             <div class="mb-3">
-                Nội dung
+                {{ advertisement_detail.content|safe }}
             </div>
             <div class="pt-2 px-2 container-comment">
                 <div class="d-flex justify-content-between align-items-baseline mb-2">

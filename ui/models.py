@@ -20,12 +20,20 @@ class Introduce(models.Model):
 		]
 	)
 
+	class Meta:
+		verbose_name = "Giới thiệu"
+		verbose_name_plural = "Giới thiệu"
+
 	def __str__(self):
 		return str(self.title)
 
 class Member(models.Model):
 	name = models.CharField(max_length=50)
 	avatar = models.FileField(upload_to="static/images", unique=True)
+
+	class Meta:
+		verbose_name = "Thành viên"
+		verbose_name_plural = "Thành viên"
 
 	def __str__(self):
 		return str(self.name)
@@ -34,12 +42,20 @@ class Advertisement(models.Model):
 	image = models.FileField(upload_to="static/images", unique=True)
 	link = models.TextField()
 
+	class Meta:
+		verbose_name = "Quảng cáo"
+		verbose_name_plural = "Quảng cáo"
+
 	def __str__(self):
 		return mark_safe(f'<img src="{self.image.url}" alt="Image Alt Text" style="width: 200px; height: 100px; object-fit: cover;">')
 
 class Partner(models.Model):
 	image = models.FileField(upload_to="static/images", unique=True)
 	link = models.TextField(default="#")
+
+	class Meta:
+		verbose_name = "Đối tác"
+		verbose_name_plural = "Đối tác"
 
 	def __str__(self):
 		return mark_safe(f'<img src="{self.image.url}" style="width: 200px; height: 100px; object-fit: cover;" />')
@@ -52,17 +68,29 @@ class Contact(models.Model):
 	read = models.BooleanField()
 	created_at = models.DateTimeField(auto_now_add=True)
 
+	class Meta:
+		verbose_name = "Liên hệ"
+		verbose_name_plural = "Liên hệ"
+
 	def __str__(self):
 		return str(self.note)
 
 class TypeProject(models.Model):
 	name = models.CharField(max_length=50)
 
+	class Meta:
+		verbose_name = "Kiểu dự án"
+		verbose_name_plural = "Kiểu dự án"
+
 	def __str__(self):
 		return str(self.name)
 
 class CategoryProject(models.Model):
 	name = models.CharField(max_length=50)
+
+	class Meta:
+		verbose_name = "Danh mục dự án"
+		verbose_name_plural = "Danh mục dự án"
 
 	def __str__(self):
 		return str(self.name)
@@ -90,6 +118,10 @@ class Project(models.Model):
 		blank=True	
 		)
 
+	class Meta:
+		verbose_name = "Dự án"
+		verbose_name_plural = "Dự án"
+
 	def __str__(self):
 		return str(self.title)
 
@@ -116,6 +148,10 @@ class Page(models.Model):
 	name = models.CharField(max_length=50, unique=True)
 	link = models.CharField(max_length=255, null=True, blank=True)
 
+	class Meta:
+		verbose_name = "Trang"
+		verbose_name_plural = "Trang"
+
 	def __str__(self):
 		return str(self.name)
 
@@ -130,7 +166,7 @@ class Sitetour(models.Model):
 	CHOICE_SITETOUR = {
 	"0": "Nổi bật"
 	}
-	image = models.FileField(upload_to="static/images")
+	image = models.FileField(upload_to="static/images", unique=True)
 	title = models.CharField(max_length=255)
 	short_content = models.CharField(max_length=255)
 	content = models.TextField()
@@ -150,6 +186,41 @@ class InfoSitetour(models.Model):
 	svg = models.TextField()
 	name = models.CharField(max_length=100)
 	sitetour = models.ForeignKey(Sitetour, on_delete=models.CASCADE, null=True, blank=True, related_name='sitetour_results')
+
+class Advertisement2(models.Model):
+	image = models.FileField(upload_to="static/images", unique=True, null=False, blank=False, verbose_name="Ảnh đại diện")
+	image1 = models.FileField(upload_to="static/images", unique=True, null=True, blank=True, verbose_name="Ảnh slider 1")
+	image2 = models.FileField(upload_to="static/images", unique=True, null=True, blank=True, verbose_name="Ảnh slider 2")
+	image3 = models.FileField(upload_to="static/images", unique=True, null=True, blank=True, verbose_name="Ảnh slider 3")
+	image4 = models.FileField(upload_to="static/images", unique=True, null=True, blank=True, verbose_name="Ảnh slider 4")
+	image5 = models.FileField(upload_to="static/images", unique=True, null=True, blank=True, verbose_name="Ảnh slider 5")
+	image6 = models.FileField(upload_to="static/images", unique=True, null=True, blank=True, verbose_name="Ảnh slider 6")
+	title = models.CharField(max_length=255, verbose_name="Tiêu đề")
+	content = models.TextField(verbose_name="Nội dung")
+	price = models.CharField(max_length=50, verbose_name="Giá tiền")
+	status = models.BooleanField(default=False)
+	created_at = models.DateTimeField(auto_now_add=True)
+
+	class Meta:
+		verbose_name = "Tin rao"
+		verbose_name_plural = "Tin rao"
+
+	def __str__(self):
+		return str(self.title)
+
+class InfoAdvertisement2(models.Model):
+	svg = models.TextField()
+	name = models.CharField(max_length=100)
+	advertisement2 = models.ForeignKey(Advertisement2, on_delete=models.CASCADE, null=True, blank=True, related_name="advertisement_results")
+
+class SignUp(models.Model):
+	full_name = models.CharField(max_length=255)
+	email = models.EmailField(max_length=255, unique=True)
+	password = models.TextField()
+	phone = models.CharField(max_length=15)
+
+
+
 
 
 

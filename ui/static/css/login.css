@@ -1,0 +1,23 @@
+.container-login {
+
+	width: 1281px;
+	margin: auto;
+}
+
+.login-right {
+
+	padding: 56px 86px 56px 110px;
+}
+
+.input-login {
+
+	padding: 17px 0px 17px 39px;
+	background: #F0F1F2;
+	font-size: 14px;
+}
+
+.button-login {
+
+	background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+	padding: 17.5px 0px;
+}

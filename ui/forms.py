@@ -50,3 +50,89 @@ class ContactForm(forms.ModelForm):
 			}
 			)
 		)
+
+class SignUpForm(forms.ModelForm):
+	class Meta:
+		model=SignUp
+		fields='__all__'
+
+	full_name = forms.CharField(
+		required=False,
+		widget=forms.TextInput(
+			attrs={
+			'type':'text',
+			'class':'rounded border-0 input-login w-100 text-main',
+			'placeholder': "Họ và tên"
+			}
+			)
+		)
+
+	email = forms.EmailField(
+		required=False,
+		widget=forms.TextInput(
+			attrs={
+			'type':'email',
+			'class':'rounded border-0 input-login w-100 text-main',
+			'placeholder': "Email",
+			'autocomplete': 'off'
+			}
+			)
+		)
+
+	email_login = forms.EmailField(
+		required=False,
+		widget=forms.TextInput(
+			attrs={
+			'type':'email',
+			'class':'rounded border-0 input-login w-100 text-main',
+			'placeholder': "Email",
+			'autocomplete': 'off'
+			}
+			)
+		)
+
+	password = forms.CharField(
+		required=False,
+		widget=forms.PasswordInput(
+			attrs={
+			'type':'password',
+			'class':'rounded border-0 input-login w-100 text-main',
+			'placeholder': "Mật khẩu",
+			'autocomplete': 'off'
+			}
+			)
+		)
+
+	password_login = forms.CharField(
+		required=False,
+		widget=forms.PasswordInput(
+			attrs={
+			'type':'password',
+			'class':'rounded border-0 input-login w-100 text-main',
+			'placeholder': "Mật khẩu",
+			'autocomplete': 'off'
+			}
+			)
+		)
+
+	password_aign = forms.CharField(
+		required=False,
+		widget=forms.PasswordInput(
+			attrs={
+			'type':'password',
+			'class':'rounded border-0 input-login w-100 text-main',
+			'placeholder': "Nhập lại mật khẩu"
+			}
+			)
+		)
+
+	phone = forms.CharField(
+		required=False,
+		widget=forms.TextInput(
+			attrs={
+			'type':'phone',
+			'class':'rounded border-0 input-login w-100 text-main',
+			'placeholder': "Số điện thoại"
+			}
+			)
+		)
