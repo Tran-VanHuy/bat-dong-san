@@ -2,6 +2,10 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.contrib.auth.models import AbstractUser, Group
+from django.contrib.auth.models import User
+
+User._meta.get_field('groups').related_name = 'user_groups'
 
 
 # Create your models here.
@@ -213,12 +217,10 @@ class InfoAdvertisement2(models.Model):
 	name = models.CharField(max_length=100)
 	advertisement2 = models.ForeignKey(Advertisement2, on_delete=models.CASCADE, null=True, blank=True, related_name="advertisement_results")
 
-class SignUp(models.Model):
-	full_name = models.CharField(max_length=255)
-	email = models.EmailField(max_length=255, unique=True)
-	password = models.TextField()
-	phone = models.CharField(max_length=15)
-
+class User(AbstractUser):
+	phone = models.CharField(max_length=15, null=True, blank=True)
+	class Meta:
+		db_table = "users"
 
 
 

@@ -3,6 +3,8 @@ from .models import *
 from django.db import models
 from django.forms import CheckboxSelectMultiple
 from django import forms
+from django.contrib.auth.admin import UserAdmin
+
 
 
 # Register your models here.
@@ -59,6 +61,8 @@ admin.site.register(Banner)
 admin.site.register(Review, ReviewAdmin)
 admin.site.register(Sitetour, SitetourAdmin)
 admin.site.register(Advertisement2, Advertisement2Admin)
+admin.site.register(User)
+
 
 
 

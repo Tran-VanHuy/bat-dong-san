@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, CreateView
 # Create your views here.
 from django.shortcuts import render
 from .models import *
@@ -18,6 +18,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordChangeDoneView
+
 
 
 class HomePage(TemplateView):
@@ -156,61 +158,30 @@ class SitetourDetailPage(TemplateView):
 		context = super().get_context_data(**kwargs)
 		return context
 
-class LoginPage(TemplateView):
-	template_name = "login/login.html"
-	form_class = forms.SignUpForm
+class RegisterPage(CreateView):
+	template_name = "register.html"
+	form_class = forms.RegisterForm
+	login_form = forms.LoginForm
 
+	def form_valid(self, form):
+		user = form.save()
+		return redirect("/")
+	
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		context['form'] = self.form_class()
+		context["process_name"] = "Đăng ký"
 		return context
 
-	def post(self, request, *args, **kwargs):
-		context = self.get_context_data(**kwargs)
-		action = request.POST.get('action')
-		form = self.form_class(self.request.POST)
-		if action == "register":
-			if form.is_valid():
-				password = form.cleaned_data.get('password')
-				password_aign = form.cleaned_data.get('password_aign')
-				if password == password_aign:
-					user = form.save()
-					user.password =  make_password(user.password)
-					user.save()
-					user = authenticate(email=user.email, password=user.password)
-					login(request, user)
-					return redirect("/")
-				else:
-					context['error'] = "Mặt khẩu không trùng khớp"
-			else:
-				context['error'] = "Tài khoản đã tồn tại"
-		if action == "login":
-			if form.is_valid():
-				print(form.cleaned_data)
-				email_login = form.cleaned_data.get('email_login')
-				user = SignUp.objects.filter(email=email_login).first()
-				print(user)
-				if user is not None:
-					password_login = form.cleaned_data.get('password_login')
-					password_match = check_password(password_login, user.password)
-					user = authenticate(email=user.email, password=user.password)
+class LoginPage(LoginView):
+	template_name="login.html"
+	form_class = forms.LoginForm
 
-					if password_match:
-						login(request, user)
-						return redirect("/")
-					else:
-						context['error_login'] = "Sai tài khoản hoặc mật khẩu"
-						print(getattr(request, 'user', None))
-				else:
-					context['error_login'] = "Sai tài khoản hoặc mật khẩu"
-					print(getattr(request, 'user', None))
+class ProfilePage(TemplateView):
+	template_name = "profile/profile.html"
 
-			else:
-				context['error_login'] = "Sai tài khoản hoặc mật khẩu"
-
-
-
-		return self.render_to_response(context)
+	def  get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		return context;
 
 
 		

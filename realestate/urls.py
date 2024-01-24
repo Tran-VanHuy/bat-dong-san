@@ -28,5 +28,9 @@ urlpatterns = [
     path("chi-tiet-tin-tuc/<slug>", NewsDetailPage.as_view(), name="news-detail"),
     path("danh-sach-sitetour", SitetourPage.as_view(), name="sitetour"),
     path("chi-tiet-sitetour/<slug>", SitetourDetailPage.as_view(), name="sitetour-detail"),
+    path("dang-ky", RegisterPage.as_view(), name="register"), 
     path("dang-nhap", LoginPage.as_view(), name="login"),  
+    path("accounts/profile/", ProfilePage.as_view(), name="profile"),  
+
+
 ]

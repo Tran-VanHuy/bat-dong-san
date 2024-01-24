@@ -1,5 +1,6 @@
 from django import forms
 from .models import *
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordChangeForm
 
 class ContactForm(forms.ModelForm):
 
@@ -51,88 +52,55 @@ class ContactForm(forms.ModelForm):
 			)
 		)
 
-class SignUpForm(forms.ModelForm):
+class RegisterForm(UserCreationForm):
 	class Meta:
-		model=SignUp
-		fields='__all__'
+		model=User
+		fields = ('last_name', 'first_name',  'phone', 'email', 'username')
 
-	full_name = forms.CharField(
-		required=False,
-		widget=forms.TextInput(
-			attrs={
-			'type':'text',
-			'class':'rounded border-0 input-login w-100 text-main',
-			'placeholder': "Họ và tên"
-			}
-			)
-		)
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)
+		for field in self.fields.values():
+			field.widget.attrs['class'] = 'rounded border-0 input-login w-100 text-main'
+			field.widget.attrs['required'] = ""
 
-	email = forms.EmailField(
-		required=False,
-		widget=forms.TextInput(
-			attrs={
-			'type':'email',
-			'class':'rounded border-0 input-login w-100 text-main',
-			'placeholder': "Email",
-			'autocomplete': 'off'
-			}
-			)
-		)
+			if field.label == "Last name":
+				field.widget.attrs['autofocus'] = ""
+				field.widget.attrs['placeholder'] = "Họ"
 
-	email_login = forms.EmailField(
-		required=False,
-		widget=forms.TextInput(
-			attrs={
-			'type':'email',
-			'class':'rounded border-0 input-login w-100 text-main',
-			'placeholder': "Email",
-			'autocomplete': 'off'
-			}
-			)
-		)
+			if field.label == "First name":
+				field.widget.attrs['autofocus'] = ""
+				field.widget.attrs['placeholder'] = "Tên"
 
-	password = forms.CharField(
-		required=False,
-		widget=forms.PasswordInput(
-			attrs={
-			'type':'password',
-			'class':'rounded border-0 input-login w-100 text-main',
-			'placeholder': "Mật khẩu",
-			'autocomplete': 'off'
-			}
-			)
-		)
+			if field.label == "Email address":
+				field.widget.attrs['autofocus'] = ""
+				field.widget.attrs['placeholder'] = "Email"
 
-	password_login = forms.CharField(
-		required=False,
-		widget=forms.PasswordInput(
-			attrs={
-			'type':'password',
-			'class':'rounded border-0 input-login w-100 text-main',
-			'placeholder': "Mật khẩu",
-			'autocomplete': 'off'
-			}
-			)
-		)
+			if field.label == "Username":
+				field.widget.attrs['autofocus'] = ""
+				field.widget.attrs['placeholder'] = "Tài khoản"
 
-	password_aign = forms.CharField(
-		required=False,
-		widget=forms.PasswordInput(
-			attrs={
-			'type':'password',
-			'class':'rounded border-0 input-login w-100 text-main',
-			'placeholder': "Nhập lại mật khẩu"
-			}
-			)
-		)
+			if field.label == "Password":
+				field.widget.attrs['autofocus'] = ""
+				field.widget.attrs['placeholder'] = "Mật khẩu"
 
-	phone = forms.CharField(
-		required=False,
-		widget=forms.TextInput(
-			attrs={
-			'type':'phone',
-			'class':'rounded border-0 input-login w-100 text-main',
-			'placeholder': "Số điện thoại"
-			}
-			)
-		)
+			if field.label == "Password confirmation":
+				field.widget.attrs['autofocus'] = ""
+				field.widget.attrs['placeholder'] = "Xác nhận mật khẩu"
+
+			if field.label == "Phone":
+				field.widget.attrs['autofocus'] = ""
+				field.widget.attrs['placeholder'] = "Số điện thoại"
+
+class LoginForm(AuthenticationForm):
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)
+		for field in self.fields.values():
+			field.widget.attrs['class'] = 'rounded border-0 input-login w-100 text-main'
+			field.widget.attrs['required'] = ""
+
+			if field.label == "Username":
+				field.widget.attrs['placeholder'] = "Tài khoản"
+
+			if field.label == "Password":
+				field.widget.attrs['placeholder'] = "Mật khẩu"
+	
