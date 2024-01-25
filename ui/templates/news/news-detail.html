@@ -1,6 +1,17 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block title %}Chi tiết tin tức{% endblock %}
+{% block login %}
+{% if last_name %}
+<a href="{% url 'profile' %}">
+    <button class="button-login rounded-pill text-white h-100 flex-fill border-0 px-3 py-2">Xin chào {{ last_name }}</button>
+</a>
+{% else %}
+<a href="{% url 'login' %}">
+    <button class="button-login rounded-pill text-white h-100 flex-fill border-0 px-3 py-2">Đăng nhập</button>
+</a>
+{% endif %}
+{% endblock %}
 {% block static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/news-detail.css' %}">
 {% endblock%}

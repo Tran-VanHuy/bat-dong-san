@@ -1,47 +1,36 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block title %} Trang cá nhân {% endblock %}
+{% block login %}
+{% if last_name %}
+<a href="{% url 'profile' %}">
+    <button class="button-login rounded-pill text-white h-100 flex-fill border-0 px-3 py-2">Xin chào {{ last_name }}</button>
+</a>
+{% else %}
+<a href="{% url 'login' %}">
+    <button class="button-login rounded-pill text-white h-100 flex-fill border-0 px-3 py-2">Đăng nhập</button>
+</a>
+{% endif %}
+{% endblock %}
 {% block static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css'%}">
+{% if not_info_user %}
+<script type="text/javascript">
+window.location.href = "{% url 'home' %}";
+</script>
+{% endif %}
 {% endblock %}
 {% block content %}
 <div class="container-content">
     <div class="d-flex">
-        <div class="profile-left rounded">
-            <div>
-                <img src="{% static 'images/Rectangle 25.png' %}">
-            </div>
-            <div class="py-4">
-                <div class="information pb-1">
-                    <b class="text-main ">Thông tin cá nhân</b>
-                </div>
-                <div class="py-3 d-flex flex-column gap-2">
-                    <div class="d-flex justify-content-between">
-                        <b class="text-main">Tài khoản:</b>
-                        <span class="text-main">huytv</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <b class="text-main">Họ và tên:</b>
-                        <span class="text-main">Trần Văn Huy</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <b class="text-main">Điện thoại:</b>
-                        <span class="text-main">0327448785</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <b class="text-main">Email:</b>
-                        <span class="text-main">huy1821051049@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include 'components/profile.html' %}
         <div class="flex-fill profile-right">
-            <h1 class="text-main mb-3">Phạm Đăng Duy</h1>
+            <h1 class="text-main mb-3">{{ info_user.last_name }} {{ info_user.first_name }}</h1>
             <div class="d-flex gap-5 text-main mb-3">
                 <b class="text-main">Ngày tham gia:</b>
-                <span>04/07/2022</span>
+                <span>{{ info_user.date_joined }}</span>
             </div>
-            <div class="d-flex gap-5 text-main mb-4">
+            <div class="d-flex gap-5 text-main mb-3">
                 <b class="text-main">Đóng góp:</b>
                 <div class="d-flex gap-5">
                     <div class="d-flex gap-3">
@@ -58,13 +47,32 @@
                     </div>
                 </div>
             </div>
+            <div class="mb-3">
+                <div class="edit-information rounded-pill">
+                    <a href="{% url 'profile-edit' %}">
+                        <img src="{% static 'images/edit-2.svg' %}">
+                        <b class="text-white">Chỉnh sửa thông tin</b>
+                    </a>
+                </div>
+            </div>
             <div>
                 <p class="text-main">
                     WeSale.vn duyệt nội dung đánh giá của thành viên trước khi hiển thị ra công khai. Những nội dung spam sẽ bị xoá ngay lập tức mà không thông báo trước. Chúng tôi có thể gỡ bất kỳ bài đánh giá nào chúng tôi cho là giả mạo hoặc không tuân thủ chính sách về bài đánh giá của WeSale.vn.
+                    <br />
+                    <br />
                     Trên máy tính hoặc trên thiết bị di động, bạn truy cập vào WeSale.vn và đảm bảo rằng bạn đã đăng nhập vào tài khoản.
                 </p>
             </div>
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#change-avatar").click(function() {
+        $("#input-file-avatar").click()
+    })
+})
+
+</script>
 {% endblock %}

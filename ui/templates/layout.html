@@ -35,9 +35,8 @@
                 <div class="rounded-circle header-icon d-flex align-items-center justify-content-center"><i class="bi bi-heart-fill text-danger"></i></div>
                 <div class="rounded-circle header-icon d-flex align-items-center justify-content-center"><i class="bi bi-search"></i></div>
                 <div>
-                    <a href="{% url 'login' %}">
-                        <button class="button-login rounded-pill text-white h-100 flex-fill border-0 px-3 py-2">Đăng nhập</button>
-                    </a>
+                    {% block login %}
+                    {% endblock %}
                 </div>
             </div>
         </div>

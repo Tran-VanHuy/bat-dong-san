@@ -30,7 +30,6 @@ urlpatterns = [
     path("chi-tiet-sitetour/<slug>", SitetourDetailPage.as_view(), name="sitetour-detail"),
     path("dang-ky", RegisterPage.as_view(), name="register"), 
     path("dang-nhap", LoginPage.as_view(), name="login"),  
-    path("accounts/profile/", ProfilePage.as_view(), name="profile"),  
-
-
+    path("accounts/profile/", ProfilePage.as_view(), name="profile"),
+    path("accounts/profile/edit", EditProfilePage.as_view(), name="profile-edit")
 ]

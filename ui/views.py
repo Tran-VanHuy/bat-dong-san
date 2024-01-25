@@ -57,6 +57,8 @@ class HomePage(TemplateView):
 			).filter(status=True)
 		context['sitetours'] = Sitetour.objects.prefetch_related(Prefetch('sitetour_results', queryset=InfoSitetour.objects.all())).filter(status=True)
 		context['sell_projects'] = Project.objects.prefetch_related(Prefetch('project_results', queryset=InfoProject.objects.all())).filter(project_sell="1", status=True)[0:4]
+		if self.request.user.is_authenticated:
+			context['last_name'] = self.request.user.last_name
 		return context
 
 
@@ -95,6 +97,8 @@ class ListProjectPage(TemplateView):
 			).filter(status=True)
 		context['sitetours'] = Sitetour.objects.prefetch_related(Prefetch('sitetour_results', queryset=InfoSitetour.objects.all())).filter(status=True).first()
 		context['projects'] = projects
+		if self.request.user.is_authenticated:
+			context['last_name'] = self.request.user.last_name
 		return context
 
 class AdvertisementPage(TemplateView):
@@ -108,7 +112,8 @@ class AdvertisementPage(TemplateView):
 		paginator = Paginator(advertisements, 6)
 		advertisements = paginator.page(page)
 		context['advertisements'] = advertisements
-
+		if self.request.user.is_authenticated:
+			context['last_name'] = self.request.user.last_name
 		return context
 
 class AdvertisementDetailPage(TemplateView):
@@ -119,6 +124,8 @@ class AdvertisementDetailPage(TemplateView):
 		title = self.kwargs['slug']
 		advertisement_detail = Advertisement2.objects.prefetch_related(Prefetch('advertisement_results', queryset=InfoAdvertisement2.objects.all())).filter(title=title).first()
 		context['advertisement_detail'] = advertisement_detail
+		if self.request.user.is_authenticated:
+			context['last_name'] = self.request.user.last_name
 		return context
 
 class NewsPage(TemplateView):
@@ -126,6 +133,8 @@ class NewsPage(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
+		if self.request.user.is_authenticated:
+			context['last_name'] = self.request.user.last_name
 		return context
 
 class NewsDetailPage(TemplateView):
@@ -133,6 +142,8 @@ class NewsDetailPage(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
+		if self.request.user.is_authenticated:
+			context['last_name'] = self.request.user.last_name
 		return context
 
 class SitetourPage(TemplateView):
@@ -149,6 +160,8 @@ class SitetourPage(TemplateView):
 		sitetours = paginator.page(page)
 
 		context['sitetours'] = sitetours
+		if self.request.user.is_authenticated:
+			context['last_name'] = self.request.user.last_name
 		return context
 
 class SitetourDetailPage(TemplateView):
@@ -179,9 +192,30 @@ class LoginPage(LoginView):
 class ProfilePage(TemplateView):
 	template_name = "profile/profile.html"
 
-	def  get_context_data(self, **kwargs):
+	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		return context;
+		if self.request.user.is_authenticated:
+			context['info_user'] = self.request.user
+			context['last_name'] = self.request.user.last_name
+		else:
+			context['not_info_user'] = True
+		return context
+
+
+
+
+class EditProfilePage(TemplateView):
+	template_name = "profile/edit.html"
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		if self.request.user.is_authenticated:
+			context['info_user'] = self.request.user
+			context['last_name'] = self.request.user.last_name
+		else:
+			context['not_info_user'] = True
+		return context
+
 
 
 		

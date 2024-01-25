@@ -18,3 +18,46 @@
 
 	padding: 0px 55px;
 }
+
+.edit-information {
+
+	padding: 15.5px 46px;
+	background: linear-gradient(90.12deg, #FF7A00 0.1%, #FF993C 99.91%);
+	display: inline-block;
+}
+
+.input-form {
+
+	background: #F0F1F2;
+	padding: 17px 28px;
+}
+
+.button-save {
+
+	background: #FF7A00;
+	padding: 15.5px 36px;
+}
+
+.button-reset {
+
+	background: #000960;
+	padding: 15.5px 55px;
+}
+
+.form-edit {
+
+	padding-bottom: 40px;
+	border-bottom: 1px dashed #00000066;
+	margin-bottom: 40px;
+}
+
+.change-avatar {
+
+	background: white;
+	display: inline-block;
+	margin-bottom: 29px;
+	padding: 12px 15px;
+	color: #1728CD;
+	font-size: 14px;
+	cursor: pointer;
+}

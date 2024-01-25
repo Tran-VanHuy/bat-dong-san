@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Chỉnh sửa cá nhân {% endblock %}
+{% block login %}
+{% if last_name %}
+<a href="{% url 'profile' %}">
+    <button class="button-login rounded-pill text-white h-100 flex-fill border-0 px-3 py-2">Xin chào {{ last_name }}</button>
+</a>
+{% else %}
+<a href="{% url 'login' %}">
+    <button class="button-login rounded-pill text-white h-100 flex-fill border-0 px-3 py-2">Đăng nhập</button>
+</a>
+{% endif %}
+{% endblock %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css'%}">
+{% if not_info_user %}
+<script type="text/javascript">
+window.location.href = "{% url 'home' %}";
+</script>
+{% endif %}
+{% endblock %}
+{% block content %}
+<div class="container-content">
+    <div class="d-flex">
+        {% include 'components/profile.html' %}
+        <div class="flex-fill profile-right">
+            <h1 class="text-main mb-5">Chỉnh sửa thông tin</h1>
+            <form class="">
+                <div class="row form-edit">
+                    <div class="col-6">
+                        <label class="mb-3 w-100">
+                            <b class="text-main">Tên đăng nhập:</b>
+                            <input type="text" name="" id="username" class="w-100 rounded input-form border-0 text-main" value="{{ info_user.username }}">
+                        </label>
+                        <label class="w-100">
+                            <b class="text-main">Địa chỉ email:</b>
+                            <input type="text" name="" id="email" class="w-100 rounded input-form border-0 text-main" value="{{ info_user.email }}" disabled>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        <label class="w-100">
+                            <div class="mb-1">
+                                <b class="text-main">Đổi mật khẩu</b>
+                            </div>
+                            <p class="text-main">Nhập mật khẩu hiện tại của bạn để thay đổi.</p>
+                            <div class="d-flex flex-column gap-3 mb-4">
+                                <input type="password" name="" placeholder="Mật khẩu hiện tại" class="w-100 rounded input-form border-0">
+                                <input type="password" name="" placeholder="Mật khẩu mới" class="w-100 rounded input-form border-0">
+                                <input type="password" name="" placeholder="Xác nhận mật khẩu mới" class="w-100 rounded input-form border-0">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-edit">
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="mb-3 w-100">
+                                <b class="text-main">Họ và tên:</b>
+                                <input type="text" name="" id="full_name" class="w-100 rounded input-form border-0 text-main" value="{{ info_user.last_name }} {{ info_user.first_name }}">
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <label class="w-100">
+                                <b class="text-main">Số điện thoại:</b>
+                                <input type="text" name="" id="phone" class="w-100 rounded input-form border-0 text-main" value="{{ info_user.phone }}">
+                            </label>
+                        </div>
+                    </div>
+                    <textarea class="w-100 input-form rounded border-0 text-main" placeholder="Giới thiệu bản thân" rows="5"></textarea>
+                </div>
+                <div class="d-flex gap-3">
+                    <button type="submit" class="button-save rounded-pill text-white border-0"><b>Lưu chỉnh sửa</b></button>
+                    <button id="button-reset" class="button-reset rounded-pill text-white border-0"><b>Đặt lại</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $("#button-reset").click(function() {
+        window.location.href = "{% url 'profile-edit' %}";
+    })
+    $("#change-avatar").click(function() {
+        $("#input-file-avatar").click()
+    })
+})
+
+</script>
+{% endblock %}
